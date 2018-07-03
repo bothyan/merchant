@@ -1,0 +1,75 @@
+.header{
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    overflow: hidden;
+}
+.bg{
+    width: 750rpx;
+    height: 200rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.avtar{
+    width: 138rpx;
+    height: 138rpx;
+    border-radius: 100%;
+    margin: 33rpx auto 0;
+    display: block;
+}
+.setings{
+    width: 42rpx;
+    height: 41rpx;
+    position: absolute;
+    top: 133rpx;
+    left: 50%;
+    margin-left: 25rpx;
+}
+.header .name{
+    font-size: 30rpx;
+    color: #333;
+    text-align: center;
+    margin: 15rpx auto 10rpx;
+}
+.title{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    font-size: 24rpx;
+}
+.vertify{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+.vertify text{
+    color: #62be85;
+    margin-left: 10rpx;
+} 
+.vertify image{
+    width: 25rpx;
+    height: 24rpx;
+}
+.title-text{
+    color: #999999;
+    margin-left: 10rpx;
+}
+.myhd{
+    height: 90rpx;
+    border-bottom: 2rpx solid #f4f4f4;
+    display: flex;
+    align-items: center; 
+    font-size: 28rpx;
+    color: #333333;
+    width: 700rpx;
+    margin: 0 auto;
+}
+.myhd text{
+    margin-left: 20rpx;
+    flex: 1;
+}
+.logout-b{
+    margin-top: 40rpx;
+}

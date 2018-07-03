@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="header">
+        <image class="bg" src="../../images/my/bg.png"></image>
+        <image class="avtar" src="../../images/temp/avtar.png" mode="aspectFill"></image>
+        <image class="setings" src="../../images/my/seting.png" bindtap="tagsetting"></image>
+        <view class="name">万物通科技有限公司</view>
+        <view class="title">
+            <view class="vertify">
+                <image src="../../images/my/dui.png"></image>
+                <text>已认证</text>
+            </view>
+            <view class="title-text">高级管理员</view>
+        </view>
+    </view>
+
+    <view class="myhd">
+        <image src="../../images/my/icon1.png" style="width: 23rpx;height: 21rpx;"></image>
+        <text>对账查询</text>
+    </view>
+    <view class="myhd">
+        <image src="../../images/my/icon2.png" style="width: 21rpx;height: 25rpx;"></image>
+        <text>管理店员</text>
+    </view>
+    <view class="myhd">
+        <image src="../../images/my/icon3.png" style="width: 22rpx;height: 22rpx;"></image>
+        <text>管理门店</text>
+    </view>
+    <view class="myhd">
+        <image src="../../images/my/icon4.png" style="width: 24rpx;height: 19rpx;"></image>
+        <text>管理款台</text>
+    </view>
+    <view class="myhd" bindtap="tapMarketing">
+        <image src="../../images/my/icon5.png" style="width: 25rpx;height: 24rpx;"></image>
+        <text>营销设置</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+    <view class="myhd" bindtap="tapshop">
+        <image src="../../images/my/icon6.png" style="width: 24rpx;height: 23rpx;"></image>
+        <text>店铺认证信息</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+    <view class="myhd" style="border:0">
+        <image src="../../images/my/icon7.png" style="width: 24rpx;height: 23rpx;"></image>
+        <text>我的客服</text>
+    </view>  
+    <button class="button logout-b" bindtap="logout">登出</button>  
+</view>

@@ -1,0 +1,19 @@
+<view class="login-container">
+    <image class="logo" src="../../images/login/logo.png"></image>    
+    <view class="form namebox">
+        <image src="../../images/login/icon1.png"></image>
+        <text>用户名</text>
+        <input placeholder="请输入用户名" placeholder-style="color:#c4c4c4"/>
+    </view>
+    <view class="form passwordbox">
+        <image src="../../images/login/icon2.png"></image>
+        <text space="emsp">密 码</text>
+        <input placeholder="请输入密码" password placeholder-style="color:#c4c4c4"/>
+    </view>
+    
+    <button class="button login-b" bindtap="login">登录</button>
+    <view class="tips">
+        <text class="forget" bindtap="forget">忘记密码</text>
+        <text class="zhuce" bindtap="zhuce">注册</text>            
+    </view>
+</view>

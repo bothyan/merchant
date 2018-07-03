@@ -1,0 +1,97 @@
+page{
+    background: #f4f4f4;
+}
+.nav{
+    height: 90rpx;
+    padding: 0 25rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.nav-hd{
+    width: 33.3%;
+    color: #333333;
+    text-align: center;
+    font-size: 28rpx;
+}
+.nav-hd.hover text{
+    color: #ff9b1f;
+}
+.list-box{
+    padding-bottom: 30rpx;
+}
+.list{
+    width: 703rpx;
+    height: 180rpx;
+    position: relative;
+    margin: 30rpx auto 0;
+}
+.list .bg{
+    position: absolute;
+    width: 703rpx;
+    height: 180rpx;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+.list .couponbg{
+    position: absolute;
+    width: 226rpx;
+    height: 180rpx;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+.list .status{
+    position: absolute;
+    width: 143rpx;
+    height: 105rpx;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+.list .price{
+    float: left;
+    width: 226rpx;
+    height: 180rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+.list .condition{
+    font-size: 20rpx;
+}
+.price-num {
+    font-size: 44rpx;
+}
+.price-num text{
+    font-size: 80rpx;
+}
+.list .msg{
+    float: left;
+    width: 452rpx;
+    height: 180rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 25rpx;
+}
+.list .name{
+    font-size: 28rpx;
+    color: #333333;
+    font-weight: bold;
+}
+.list .num{
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+.list .period{
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 10rpx;
+}

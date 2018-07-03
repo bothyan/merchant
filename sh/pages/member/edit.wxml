@@ -1,0 +1,21 @@
+<view class="container">
+    <image class="avtar" src="../../images/temp/member.png" mode="aspectFill"></image>  
+    <view class="datailhd">
+        <text>真实姓名：</text>
+        <input value="李三"></input>
+    </view>
+    <view class="datailhd">
+        <text space="emsp">性  别：</text>
+        <input value="男"></input>
+    </view>
+    <view class="datailhd">
+        <text>手机号码：</text>
+        <input value="18347903875"></input>
+    </view>
+    <view class="datailhd">
+        <text space="emsp">生  日：</text>
+        <input value="1989-09-18"></input>
+    </view>     
+
+    <button class="button sava-b" bindtap="sava">保存</button>
+</view>

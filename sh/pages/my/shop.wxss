@@ -1,0 +1,10 @@
+.myhd{
+    height: 90rpx;
+    border-bottom: 2rpx solid #f4f4f4;
+    display: flex;
+    align-items: center; 
+    width: 700rpx;
+    margin: 0 auto;
+    font-size: 28rpx;
+    color: #333333;
+}

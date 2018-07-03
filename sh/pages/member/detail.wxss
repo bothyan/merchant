@@ -1,0 +1,150 @@
+.header{
+    padding: 40rpx 25rpx;
+    height: 136rpx;
+}
+.avtar{
+    width: 136rpx;
+    height: 136rpx;
+    border-radius: 20rpx;
+    float: left;
+}
+.msg{
+    float: left;
+    height: 136rpx;
+    margin-left: 24rpx;
+    width: 540rpx;
+    position: relative;
+}
+.title{
+    display: flex;
+    align-items: center; 
+}
+.title text{
+    color: #333333;
+    font-size: 30rpx;
+}
+.gender{
+    width: 29rpx;
+    height: 31rpx;
+    margin-left: 10rpx;
+}
+.chuzhi{
+    font-size: 20rpx;
+    color: #fff;
+    border: 2rpx solid #2acdac;
+    color: #2acdac;
+    padding:0 10rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-left: 10rpx;
+}
+.shiming{
+    font-size: 20rpx;
+    color: #fff;
+    border: 2rpx solid #007fcc;
+    color: #007fcc;
+    padding:0 10rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-left: 10rpx;
+}
+.basemsg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.basemsg-hd{
+    color: #999999;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    margin-bottom: -10rpx;
+}
+.basemsg-hd text{
+    margin-left: 10rpx;
+}
+.arrow-right1{
+    position: absolute;
+    top: 48rpx;
+    right: 0;
+}
+.datas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25rpx 30rpx;
+    border-bottom: 30rpx solid #f4f4f4;
+}
+.datas-hd{
+    width: 33%;
+}
+.datas text{
+    text-align: center;
+    display: block;
+}
+.datas .words{
+    margin-top: 8rpx;
+    font-size: 24rpx;
+    color: #999999;
+}
+.num1{
+    font-size: 36rpx;
+    color: #333333;
+    font-weight: bold;
+}
+.num2,.num3{
+    font-size: 36rpx;
+    color: #ff9b1f;
+    font-weight: bold;
+}
+
+.datailhd{
+    height: 90rpx;
+    border-bottom: 2rpx solid #f4f4f4;
+    display: flex;
+    align-items: center; 
+    width: 700rpx;
+    margin: 0 auto;
+    font-size: 28rpx;
+    color: #999;
+}
+.datailhd text{
+    flex: 1;
+}
+.datailhd1 text{
+    color: #333;
+}
+.datailhd view{
+    color: #333;
+}
+.datailhd1{
+    border:0;
+}
+.titlebox{
+    height: 90rpx;
+    line-height: 90rpx;
+    display: flex;
+    align-items: center;
+    border-top: 30rpx solid #f4f4f4;
+}
+.titlebox text{
+    color: #333333;
+    font-size: 28rpx;
+    margin-left: 14rpx;
+}
+.datailhd2{
+    border-bottom: 0;
+    border-top: 2rpx solid #f4f4f4;
+}
+.chuzhi-b{
+    display: block;
+    width: 750rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #fff3e7;
+    font-size: 36rpx;
+    color: #ff9b1f;
+    border: none;
+    letter-spacing: 1em;
+}

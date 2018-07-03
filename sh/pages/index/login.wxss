@@ -1,0 +1,57 @@
+.logo{
+    width: 161rpx;
+    height: 177rpx;
+    margin: 150rpx auto;
+    display: block;
+}
+.form{
+    height: 90rpx;
+    line-height: 90rpx; 
+    display: flex; 
+    align-items: center;
+    border-top: 2rpx solid #d1d1d1;
+    border-bottom: 2rpx solid #d1d1d1;
+}
+
+.form text{
+    color: #666;
+    font-size: 30rpx;
+    margin-left: 25rpx;
+}
+.form input{
+    margin-left: 25rpx;
+    width: 500rpx;
+    color: #666;
+    font-size: 30rpx;
+}
+
+.namebox image{
+    width: 28rpx;
+    height: 30rpx;
+    margin-left: 25rpx; 
+}
+.passwordbox{
+    border-top:0;
+}
+.passwordbox image{
+    width: 26rpx;
+    height: 33rpx;
+    margin-left: 26rpx; 
+}
+
+.login-b{
+    margin-top: 100rpx;
+}
+
+.tips{
+    padding: 0 25rpx;
+    margin-top: 20rpx;
+    color: #999999;
+    font-size: 24rpx;
+}
+.forget{
+    float: left;
+} 
+.zhuce{
+    float: right;
+}

@@ -1,0 +1,18 @@
+<view class="container">
+    <image class="banner" src="../../images/temp/shop.png" style="width: 750rpx;height: 257rpx;"></image>
+    <view class="myhd">
+        <text>门店名称</text>
+    </view>
+    <view class="myhd">
+        <text>门店地址</text>
+    </view>
+    <view class="myhd">
+        <text>经营品类</text>
+    </view>
+    <view class="myhd">
+        <text>联系电话</text>
+    </view>
+    <view class="myhd" style="border:0">
+        <text>联系人</text>
+    </view>
+</view>

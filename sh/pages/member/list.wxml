@@ -1,0 +1,59 @@
+<view class="container">
+    <view class="header">
+        <view class="search-hd" bindtap="searchfocus">
+            <image src="../../images/searchicon.png" style="width: 25rpx;height: 25rpx;"></image>
+            <input placeholder="请输入会员名称／手机号／门店名称" placeholder-style="color:#999" focus="{{searchfocus}}"></input>
+        </view>
+    </view>
+    <view class="datas">
+        <view class="data-hd">
+            <view class="data-title">今日新增</view>
+            <view class="data-num"><text>100</text>人</view>
+        </view>
+        <view class="data-hd">
+            <view class="data-title">全部</view>
+            <view class="data-num"><text>100</text>人</view>
+        </view>
+    </view>
+    <view class="nav">
+        <view class="nav-hd triangle{{orderArr[0]}}" data-index="0" bindtap="orders">
+            <text>注册时间</text> 
+            <view class="triangle1"></view> 
+            <view class="triangle2"></view>    
+        </view>
+        <view class="nav-hd triangle{{orderArr[1]}}" data-index="1" bindtap="orders">
+            <text>支付金额</text> 
+            <view class="triangle1"></view> 
+            <view class="triangle2"></view>    
+        </view>
+        <view class="nav-hd triangle{{orderArr[2]}}" data-index="2" bindtap="orders">
+            <text>到店次数</text> 
+            <view class="triangle1"></view> 
+            <view class="triangle2"></view>    
+        </view>
+        <view class="nav-hd triangle{{orderArr[3]}}" data-index="3" bindtap="orders">
+            <text>到店时间</text> 
+            <view class="triangle1"></view> 
+            <view class="triangle2"></view>    
+        </view>
+    </view>
+    <view class="member-box">
+        <view class="member-list" wx:for="[1,2,3]" bindtap="todetail">
+            <image class="avtar" src="../../images/temp/member.png" mode="aspectFill"></image>
+            <view class="msg">
+                <view class="title">
+                    <text>李三</text>
+                    <image class="gender" src="../../images/gender2.png"></image>
+                    <view class="chuzhi">已储值</view>
+                    <view class="shiming">已实名</view>
+                </view>
+                <view class="phone">18347903875</view>
+                <view class="msg-data">
+                    <view>共消费<text>238.4</text>元</view>    
+                    <view class="sales">消费次数<text>4</text>次</view>      
+                </view>
+            </view>
+        </view>
+    </view>
+    <button class="button chuzhi-b" bindtap="tochuzhi">会员储值</button>
+</view>

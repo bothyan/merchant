@@ -1,0 +1,34 @@
+.myhd{
+    height: 90rpx;
+    border-bottom: 2rpx solid #f4f4f4;
+    display: flex;
+    align-items: center; 
+    width: 700rpx;
+    margin: 0 auto;
+    font-size: 28rpx;
+    color: #333333;
+}
+.myhd text{
+    margin-left: 20rpx;
+    flex: 1;
+}
+.selects{
+    width: 49rpx;
+    height: 42rpx;
+    margin-right:-9rpx; 
+}
+.tips{
+    padding: 0 25rpx;
+    margin-top: 25rpx;
+    font-size: 22rpx;
+    color: #ff8d8c;
+}
+.tips view{
+    padding-left: 50rpx;
+}
+.tips1 text{
+    font-size: 24rpx;
+    width: 50rpx;
+    display: inline-block;
+    margin-left: -50rpx;
+}

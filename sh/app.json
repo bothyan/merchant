@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/login",
+    "pages/data/data",
+    "pages/message/message",
+    "pages/my/my",
+    "pages/my/shop",
+    "pages/my/marketing",
+    "pages/member/list",
+     "pages/member/detail",
+    "pages/member/coupon",
+    "pages/member/store",
+    "pages/member/consumehistory",
+    "pages/member/storedhistory",
+    "pages/member/register",
+    "pages/member/recharge",
+    "pages/member/success",
+    "pages/member/edit"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2c304d",
+    "navigationBarTitleText": "智慧商街",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "list":[{
+          "pagePath":"pages/index/index",
+          "iconPath":"images/nav/nav1.png",
+          "selectedIconPath":"images/nav/nav1_h.png",
+          "text":"首页"
+      },{
+          "pagePath":"pages/data/data",
+          "iconPath":"images/nav/nav2.png",
+          "selectedIconPath":"images/nav/nav2_h.png",
+          "text":"数据"
+      },{
+          "pagePath":"pages/message/message",
+          "iconPath":"images/nav/nav3.png",
+          "selectedIconPath":"images/nav/nav3_h.png",
+          "text":"消息"
+      },{
+          "pagePath":"pages/my/my",
+          "iconPath":"images/nav/nav4.png",
+          "selectedIconPath":"images/nav/nav4_h.png",
+          "text":"我的"
+      }]
+  }
+}

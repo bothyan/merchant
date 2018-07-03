@@ -1,0 +1,24 @@
+.avtar{
+    width: 150rpx;
+    height: 150rpx;
+    margin: 50rpx auto;
+    display: block;
+}
+.datailhd{
+    height: 90rpx;
+    border-bottom: 2rpx solid #f4f4f4;
+    display: flex;
+    align-items: center; 
+    width: 700rpx;
+    margin: 0 auto;
+    font-size: 28rpx;
+    color: #333;
+}
+.datailhd input{
+    flex: 1;
+    margin-left: 40rpx;
+    color: #999;
+}
+.sava-b{
+    margin-top: 50rpx;
+}

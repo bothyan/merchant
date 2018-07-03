@@ -1,0 +1,72 @@
+<view class="container">
+    <view class="header">
+        <view class="header-hd header-hd1">
+            <image src="../../images/index/icon1.png" style="width:66rpx;height:66rpx;"></image>  
+            <text>扫码收款</text>      
+        </view>
+        <view class="header-hd header-hd2">
+            <image src="../../images/index/icon2.png" style="width:66rpx;height:74rpx;"></image>  
+            <text>查看流水</text>      
+        </view>
+        <view class="header-hd header-hd3">
+            <image src="../../images/index/icon3.png" style="width:80rpx;height:62rpx;"></image>  
+            <text>发票管理</text>      
+        </view>
+    </view>
+    <view class="nav">
+        <view class="nav-hd">
+            <image src="../../images/index/nav1.png" style="width:68rpx;height:43rpx;"></image>  
+            <text>优惠券</text>  
+        </view>
+        <view class="nav-hd" bindtap="members">
+            <image src="../../images/index/nav2.png" style="width:64rpx;height:48rpx;"></image>  
+            <text>会员管理</text>  
+        </view>
+        <view class="nav-hd">
+            <image src="../../images/index/nav3.png" style="width:53rpx;height:51rpx;"></image>  
+            <text>会员活动</text>  
+        </view>
+        <view class="nav-hd">
+            <image src="../../images/index/nav4.png" style="width:55rpx;height:46rpx;"></image>  
+            <text>计次卡</text>  
+        </view>
+        <view class="nav-hd">
+            <image src="../../images/index/nav5.png" style="width:43rpx;height:52rpx;"></image>  
+            <text>流水贷</text>  
+        </view>
+        <view class="nav-hd">
+            <image src="../../images/index/nav6.png" style="width:50rpx;height:49rpx;"></image>  
+            <text>扫码开票</text>  
+        </view>
+        <view class="nav-hd">
+            <image src="../../images/index/nav7.png" style="width:47rpx;height:52rpx;"></image>  
+            <text>扫码退款</text>  
+        </view>
+    </view>
+    <view class="model data">
+        <view class="titlebox">
+            <image src="../../images/index/titleb.png" style="width:11rpx;height:29rpx;"></image>  
+            <text>今日数据</text>
+        </view>
+        <view class="datas">
+            <view class="datas-hd datas-hd1">
+                <text class="data-t">33200.9</text>
+                <text class="data-num">实收金额</text>
+            </view>
+            <view class="datas-hd datas-hd2">
+                <text class="data-t">245</text>
+                <text class="data-num">今日笔数</text>
+            </view>
+            <view class="datas-hd datas-hd3">
+                <text class="data-t">890.2</text>
+                <text class="data-num">平均客单价</text>
+            </view>
+        </view>
+    </view>
+    <view class="model active">
+        <view class="titlebox">
+            <image src="../../images/index/titleb.png" style="width:11rpx;height:29rpx;"></image>  
+            <text>营销活动</text>
+        </view>
+    </view>
+</view>
