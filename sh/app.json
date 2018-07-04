@@ -1,14 +1,14 @@
 {
   "pages":[
-    "pages/index/index",
     "pages/index/login",
+    "pages/index/index",
     "pages/data/data",
     "pages/message/message",
     "pages/my/my",
     "pages/my/shop",
     "pages/my/marketing",
     "pages/member/list",
-     "pages/member/detail",
+    "pages/member/detail",
     "pages/member/coupon",
     "pages/member/store",
     "pages/member/consumehistory",

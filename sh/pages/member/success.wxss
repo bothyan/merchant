@@ -1,0 +1,50 @@
+.bank{
+    width: 217rpx;
+    height: 212rpx;
+    margin: 90rpx auto 50rpx;
+    display: block;
+}
+.tips{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tips text{
+    color: #62be85;
+    font-size: 36rpx;
+    margin-left: 10rpx;
+}
+.confirm-b{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 750rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #fff3e7;
+    font-size: 36rpx;
+    color: #ff9b1f;
+    border: none;
+    letter-spacing: 1em;
+    border-radius: 0;
+}
+.words{
+    width: 550rpx;
+    margin: 70rpx auto 0;
+}
+.words .words-hd{
+    text-align: left;
+    margin-bottom: 15rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+.label{
+    font-weight: bold;
+}
+.num{
+    font-size: 36rpx;
+    color: #ff9b1f;
+    font-weight: bold;
+}

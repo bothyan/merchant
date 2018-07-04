@@ -1,0 +1,46 @@
+.avtar-hd{
+    width: 154rpx;
+    margin: 80rpx auto 10rpx;
+    text-align: center;
+    color: #999;
+    font-size: 30rpx;
+}
+.avtar-hd image{
+    width: 154rpx;
+    height: 154rpx;
+}
+.avtar text{
+    margin-top: 10rpx;
+}
+.form-hd{
+    height: 50rpx;
+    width: 590rpx;
+    margin: 0 auto;
+    border-bottom: 2rpx solid #f4f4f4;
+    padding-top: 30rpx;
+    display: flex;
+    font-size: 30rpx;
+    color: #666;
+    align-items: center;
+}
+.form-hd input{
+    flex: 1;
+    margin-left: 30rpx;
+}
+.radio-group{
+    flex: 1;
+}
+.radio-group .radio{
+    float: right;
+    line-height: 50rpx;
+}
+.radio1{
+    margin-left:100rpx;
+}
+radio {
+    transform:scale(0.7);
+}
+.login-register{
+    margin-top: 80rpx;
+    width: 590rpx;
+}

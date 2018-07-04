@@ -4,14 +4,19 @@ const app = getApp()
 
 Page({
   data: {
-
+    searchfocus:false,
   },
   onLoad: function () {
     
   },
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  searchfocus: function(){
+    this.setData({
+        searchfocus:true
     })
   },
+  tosearch: function() {
+    wx.navigateTo({
+      url: 'recharge'
+    })
+  }
 })

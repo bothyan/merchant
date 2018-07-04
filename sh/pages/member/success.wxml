@@ -1,3 +1,19 @@
 <view class="container">
-    
+    <image class="bank" src="../../images/member/bank.png"></image>
+    <view class="tips">
+        <image src="../../images/member/dui.png" style="width: 50rpx;height: 42rpx"></image>   
+        <text>充值成功</text>
+    </view>
+    <view class="words">
+        <view class="words-hd">
+            <text class="label">当前金额：</text><text class="num">8908</text>元
+        </view>
+        <view class="words-hd">
+            <text class="label">本次充值：</text><text class="num">3000</text>元，赠送<text class="num">500</text>元
+        </view>
+        <view class="words-hd">
+            <text class="label">充值次数：</text><text class="num">3</text>次
+        </view>
+    </view>
+    <button class="button confirm-b" bindtap="toconfirm">确认</button>
 </view>

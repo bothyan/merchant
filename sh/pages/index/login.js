@@ -10,7 +10,7 @@ Page({
     
   },
   login: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: 'index'
     })
   },

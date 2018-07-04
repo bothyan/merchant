@@ -9,6 +9,9 @@ Page({
   onLoad: function () {
     
   },
+  upload: function(){
+    
+  },
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'

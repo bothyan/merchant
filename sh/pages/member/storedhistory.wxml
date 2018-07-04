@@ -1,3 +1,45 @@
 <view class="container">
-    
+    <view class="tophd"></view>
+    <view class="datas">
+        <view class="datas-hd">
+            <view class="num">1500</view>
+            <view class="word">累计储值（元）</view>
+        </view> 
+         <view class="datas-hd">
+            <view class="num">600</view>
+            <view class="word">消费金额（元）</view>
+        </view>        
+    </view>
+    <view class="list-hd">
+        <view class="list">
+            <view class="list1">
+                <text class="word">储值消费</text>
+                <text class="num">-600</text>
+            </view>
+            <view class="list2">
+                <text class="word">2018-06-09 12:31</text>
+                <text class="num">上地东路得实大厦店</text>   
+            </view>
+        </view>
+        <view class="list">
+            <view class="list1">
+                <text class="word">会员充值</text>
+                <text class="num1">+1500</text>
+            </view>
+            <view class="list2">
+                <text class="word">2018-06-09 12:31</text>
+                <text class="num">总店</text>   
+            </view>
+        </view>
+        <view class="list">
+            <view class="list1">
+                <text class="word">储值消费</text>
+                <text class="num">-600</text>
+            </view>
+            <view class="list2">
+                <text class="word">2018-06-09 12:31</text>
+                <text class="num">上地东路得实大厦店</text>   
+            </view>
+        </view>
+    </view>
 </view>

@@ -1,3 +1,31 @@
 <view class="container">
-    
+    <view class="code-hd">
+        <image class="codebg" src="../../images/member/storedbg.png" />
+        <view class="search-hd" bindtap="searchfocus">
+            <image src="../../images/searchicon.png" style="width: 25rpx;height: 25rpx;"></image>
+            <input placeholder="请输入手机号" focus="{{searchfocus}}" confirm-type="search" bindconfirm="tosearch"></input>
+        </view>
+        <image class="code" src="../../images/temp/code.png" />
+        <view class="tips1">请使用微信扫描二维码</view>
+        <view class="tips2">顾客使用微信扫描、输入手机号可以</view>
+    </view>
+
+    <view class="features">
+        <view class="features-hd">
+            <image src="" src="../../images/member/icon4.png" style="width:26rpx;height: 21rpx;"/>
+            <text>办理新会员</text>
+        </view> 
+        <view class="features-hd">
+            <image src="" src="../../images/member/icon5.png" style="width:22rpx;height: 26rpx;"/>
+            <text>查询会员信息</text>
+        </view>  
+        <view class="features-hd">
+            <image src="" src="../../images/member/icon6.png" style="width:26rpx;height: 26rpx;"/>
+            <text>办理充值</text>
+        </view>  
+        <view class="features-hd">
+            <image src="" src="../../images/member/icon7.png" style="width:26rpx;height: 26rpx;"/>
+            <text>修改会员资料</text>
+        </view>         
+    </view>
 </view>

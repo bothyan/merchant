@@ -1,0 +1,100 @@
+.amount-hd{
+    width: 540rpx;
+    margin: 75rpx auto 0;
+}
+.amount-hd .tips{
+    color: #333;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+.amount-hd textarea{
+    height: 100rpx;
+    width: 100%;
+    background: #ebebeb;
+    margin-top: 10rpx;
+    color: #333;
+    font-size: 30rpx;
+    padding: 5rpx;
+}
+.place{
+    color: #999;
+    font-size: 24rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10rpx;
+}
+.options-hd{
+    width: 540rpx;
+    margin: 50rpx auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.options{
+    width: 240rpx;
+    height: 130rpx;
+    border: 4rpx solid #62be85;
+    border-radius: 10rpx;
+    margin-bottom: 50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.rmb{
+    color: #62be85;
+    font-size: 36rpx;    
+}
+.offer{
+    color: #62be85;
+    font-size: 24rpx;   
+    margin-top: 10rpx;
+}
+.confirm-b{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 750rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    background: #fff3e7;
+    font-size: 36rpx;
+    color: #ff9b1f;
+    border: none;
+    letter-spacing: 1em;
+    border-radius: 0;
+}
+.poppay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    background: rgba(0,0,0,0.8);
+    z-index: 100;
+}
+.pays{
+    position: absolute;
+    width: 700rpx;
+    left: 0;
+    bottom: 90rpx;
+    padding: 0 25rpx;
+    background: #fff;
+}
+.pay-hd{
+    display: flex;
+    height: 100rpx;
+    align-items: center;
+    border-bottom: 2rpx solid #f4f4f4;
+}
+.pay-hd text{
+    flex: 1;
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+

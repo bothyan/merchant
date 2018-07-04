@@ -1,3 +1,30 @@
 <view class="container">
-    
+    <view class="avtar-hd" bindtap="upload">
+        <image src="../../images/member/avtarnull.png" /> 
+        <view>上传头像</view>  
+    </view>
+    <view class="form-hd">
+        <text>真实姓名</text>
+        <input  placeholder="填写姓名" placeholder-style="color:#999" />
+    </view>
+    <view class="form-hd">
+        <text space="emsp">性  别</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio radio1">
+            <radio value="1"/>女
+          </label> 
+          <label class="radio">
+            <radio value="0"/>男
+          </label>   
+        </radio-group>
+    </view>
+    <view class="form-hd">
+        <text>手机号码</text>
+        <input placeholder="填写手机号码" placeholder-style="color:#999"  />
+    </view>
+    <view class="form-hd">
+        <text space="emsp">生  日</text>
+        <input placeholder="填写生日" placeholder-style="color:#999"  />
+    </view>
+    <button class="button login-register" bindtap="register">登录</button>
 </view>
