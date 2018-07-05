@@ -1,0 +1,15 @@
+<view class="container">
+    <view class="lists" wx:for="{{[1,2,3]}}">
+        <view class="city">北京市</view>
+        <view class="shop-list" wx:for="{{[1,2,3]}}">
+            <view class="name-distance">
+                <view class="name">智慧商街上地店</view>
+                <view class="distance">985m</view>
+            </view>
+            <view class="location">
+                <image src="../../images/locationicon.png" style="width: 26rpx;height: 28rpx;"></image>
+                <view class="word">京市海淀区上地东路9号得实大厦二层</view>
+            </view>
+        </view> 
+    </view>
+</view>

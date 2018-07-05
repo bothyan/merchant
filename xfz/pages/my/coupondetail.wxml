@@ -1,0 +1,46 @@
+<view class="container">
+    <image class="iconcard" src="../../images/my/iconcard.png"></image>
+    <view class="hd">
+        <view class="title">新人开卡礼劵</view>
+        <view class="jine">50元</view>
+        <view class="msg-hd dotted">
+            <text class="label">可用时间：</text>
+            <view class="con">
+                2018.04.04-2018.09.17,周一至周五全天   
+            </view>        
+        </view>
+        <view class="msg-hd">
+            <text class="label">优惠说明：</text>
+            <view class="con">
+                价值50元代金券一张
+            </view>        
+        </view>
+        <view class="msg-hd">
+            <text class="label">使用门槛：</text>
+            <view class="con">
+                到店消费300元立即使用
+            </view>        
+        </view>
+        <view class="msg-hd">
+            <text class="label">有效日期：</text>
+            <view class="con">
+                2018.04.04-2018.09.17
+            </view>        
+        </view>
+        <view class="msg-hd dotted">
+            <text class="label" space="emsp">电  话：</text>
+            <view class="con">
+               010-87652986
+            </view>        
+        </view>
+        <view class="msg-hd" bindtap="tocouponshop">
+            <text class="label">使用门店：</text>
+            <view class="con">
+                全部
+            </view>  
+            <image class="arrow-right" src="../../images/arrow.png"></image>      
+        </view>
+    </view>
+    <button class="button addwxcard-b" bindtap="addwxcard">添加微信卡包</button>
+
+</view>

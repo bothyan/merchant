@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="nav">
+        <view data-index="0" class="nav-hd {{navArr[0]}}" bindtap="tapnav">
+            未使用(<text>3</text>)
+        </view> 
+        <view data-index="1" class="nav-hd {{navArr[1]}}" bindtap="tapnav">
+            已使用(<text>2</text>)
+        </view> 
+        <view data-index="2" class="nav-hd {{navArr[2]}}" bindtap="tapnav">
+            已过期(<text>1</text>)
+        </view>       
+    </view>
+    <view class="list-box" wx:if="{{navArr[0] == 'hover'}}">
+        <view class="list" wx:for="{{[1,2,3]}}" bindtap="tocoupondetail">
+            <image class="bg" src="../../images/my/bgs.png"></image>
+            <image class="couponbg" src="../../images/my/couponbg.png"></image>
+            <view class="price">
+                <view class="price-num">￥<text>50</text></view>  
+                <view class="condition">满100元可用</view>   
+            </view>
+            <view class="msg">
+                <text class="name">新人开卡券</text>
+                <text class="num">共1000张</text>
+                <text class="period">有效期:30天内有效</text>
+            </view>
+        </view>
+    </view>
+    <view class="list-box" wx:if="{{navArr[1] == 'hover'}}">
+        <view class="list"  wx:for="{{[1,2]}}" bindtap="tocoupondetail">
+            <image class="bg" src="../../images/my/bgs.png"></image>
+            <image class="couponbg" src="../../images/my/couponbg.png"></image>
+            <view class="price">
+                <view class="price-num">￥<text>50</text></view>  
+                <view class="condition">满100元可用</view>   
+            </view>
+            <view class="msg">
+                <text class="name">新人开卡券</text>
+                <text class="num">共1000张</text>
+                <text class="period">有效期:30天内有效</text>
+            </view>
+            <image class="status" src="../../images/my/hexiao.png"></image>
+        </view>
+    </view>
+    <view class="list-box" wx:if="{{navArr[2] == 'hover'}}">
+        <view class="list" wx:for="{{[1]}}" bindtap="tocoupondetail">
+            <image class="bg" src="../../images/my/bgs.png"></image>
+            <image class="couponbg" src="../../images/my/couponbg.png"></image>
+            <view class="price">
+                <view class="price-num">￥<text>50</text></view>  
+                <view class="condition">满100元可用</view>   
+            </view>
+            <view class="msg">
+                <text class="name">新人开卡券</text>
+                <text class="num">共1000张</text>
+                <text class="period">有效期:2018.06.09-2018.09.10 </text>
+            </view>
+            <image class="status" src="../../images/my/guoqi.png"></image>
+        </view>
+    </view>
+</view>

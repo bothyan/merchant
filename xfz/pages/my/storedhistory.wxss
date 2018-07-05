@@ -1,0 +1,76 @@
+.tophd{
+    width: 100%;
+    height: 115rpx;
+    background: #fff3e7;
+}
+.datas{
+    height: 130rpx;
+    width: 640rpx;
+    position: absolute;
+    top: 30rpx;
+    left: 55rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20rpx;
+    box-shadow:0 2px 4px 0 #f8f8f8;
+}
+.datas-hd{
+    text-align: center;
+    width: 50%;
+}
+.datas-hd .num{
+    font-size: 36rpx;
+    color: #ff9b1f;
+    font-weight: bold;    
+}   
+.datas-hd .word{
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 10rpx;
+}
+.list-hd{
+    padding: 60rpx 25rpx 0;
+    background: #fff;
+}
+.list{
+    height: 120rpx;
+    border-bottom: 2rpx solid #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.list .word{
+    float: left;
+}
+.list .num{
+    float: right;
+}
+.list1 .word{
+    font-size: 28rpx;
+    color: #333;
+}
+.list1 .num{
+    font-size: 28rpx;
+    color: #fc8e8e;
+    font-weight: bold;
+}
+.list1 .num1{
+    font-size: 28rpx;
+    color: #5dbf82;
+    font-weight: bold;
+    float: right;
+}
+.list2{
+    margin-top: 5rpx;
+}
+.list2 .word{
+    font-size: 24rpx;
+    color: #999;
+}
+.list2 .num{
+    font-size: 24rpx;
+    color: #999;
+}
+

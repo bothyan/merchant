@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="tophd"></view>
+    <view class="datas">
+        <view class="datas-hd">
+            <view class="num">2</view>
+            <view class="word">消费次数（次）</view>
+        </view>  
+        <view class="datas-hd">
+            <view class="num">300</view>
+            <view class="word">消费总额（元）</view>
+        </view>       
+    </view>
+    <view class="list-hd">
+        <view class="list" wx:for="{{[1,2,3]}}">
+            <view class="left">
+                <text class="place">上地东路得实大厦店</text>   
+                <text class="time">2018-06-09 12:31</text>
+            </view>
+            <view class="right">-600</view>
+        </view>
+        
+    </view>
+</view>

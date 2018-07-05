@@ -1,0 +1,35 @@
+<view class="container">
+    <view class="header">
+        <image class="header-bg" src="../../images/my/bg.png"></image>
+        <view class="con">
+            <view class="tips">账户余额（元）</view>
+            <view class="num">10000</view>
+        </view>
+        <text class="instructions" bindtap="showpop">储值规则说明>></text>
+    </view>
+    <view class="titlebox">
+        <image src="../../images/titleb.png" style="width:11rpx;height:29rpx;"></image>  
+        <text>充值记录</text>
+    </view>
+    <view class="list-hd">
+        <view class="list" wx:for="{{[1,2,3,4,5]}}">
+            <view class="left">
+                <text class="place">智慧商街上地店（线下）</text>   
+                <text class="time">2018-06-09 12:31</text>
+            </view>
+            <view class="right">+1500</view>
+        </view>
+    </view>
+    <view wx:if="{{poplay}}" class="poplay" bindtap="hidepop">
+        <view class="pop-hd">
+            <view class="titlepop">储值规则说明</view>
+            <view class="items">1.啊大家佛啊阿多功能可发电量难过；</view>
+            <view class="items">2.阿岛国撒大卫哦卷发的风格；</view>
+            <view class="items">3.阿萨德冠军阿方破感觉热东热；</view>
+            <view class="items">4上课的风景广泛的德国队骗人大风经过风格突然一天。1.啊大家佛啊阿多功能可发电量难过；</view>
+            <view class="items">5.阿岛国撒大卫哦卷发的风格；</view>
+            <view class="items">6.阿萨德冠军阿方破感觉热东热；</view>
+            <view class="items">7.上课的风景广泛的德国队骗人大风经过风格突然一天。</view>
+        </view>
+    </view>
+</view>

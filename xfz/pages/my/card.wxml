@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="hds"></view>
+    <view class="card">
+        <image src="../../images/my/card.png"></image>
+        <view class="title-zh">智慧商街</view>
+        <view class="title-en">ZHIHUISHANGJIE</view>
+        <view class="name">商户智慧餐厅会员卡</view>
+        <view class="num">3293872350976983269</view>
+    </view>
+    <image src="../../images/my/code.png" class="code"></image>
+</view>

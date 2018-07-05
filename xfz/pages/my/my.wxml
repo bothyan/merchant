@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="hds"></view>
+    <view class="header" bindtap="tocard">
+        <view class="avtar-hd">
+            <image class="avtar" src="../../images/temp/avtar.png"></image>
+        </view>
+        <view class="msg-hd">
+            <view class="code-hd">
+                <text class="title">智慧商街</text>
+                <image class="code" src="../../images/my/iconcode.png" style="width: 37rpx;height: 37rpx"></image>
+            </view>
+            <view class="name-hd">
+                <view class="name-level">
+                    <view class="name">向日葵小姐姐</view>
+                    <view class="level">lv2</view>
+                </view>
+                <view class="phone">29760097740976</view>
+            </view>    
+        </view>
+    </view>
+    <view class="datas">
+        <view class="datas-hd" bindtap="toyue">
+            <text class="num1">300.9</text>
+            <text class="words">余额</text>
+        </view>
+        <view class="datas-hd">
+            <text class="num2">200</text>
+            <text class="words">积分</text>
+        </view>
+        <view class="datas-hd" bindtap="tocoupon">
+            <text class="num3">8</text>
+            <text class="words">优惠券</text>
+        </view>
+    </view>
+    <view class="myhd">
+        <image src="../../images/my/icon1.png" style="width: 34rpx;height: 30rpx;"></image>
+        <text>我的红包</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+    <view class="myhd">
+        <image src="../../images/my/icon2.png" style="width: 31rpx;height: 29rpx;"></image>
+        <text>我的计次卡</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+    <view class="myhd" bindtap="toconsume">
+        <image src="../../images/my/icon3.png" style="width: 30rpx;height: 30rpx;"></image>
+        <text>消费记录</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+    <view class="myhd" bindtap="tostored">
+        <image src="../../images/my/icon5.png" style="width: 28rpx;height: 28rpx;"></image>
+        <text>充值记录</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+    <view class="myhd">
+        <image src="../../images/my/icon4.png" style="width: 30rpx;height: 24rpx;"></image>
+        <text>我的发票</text>
+        <image class="arrow-right" src="../../images/arrow.png"></image>
+    </view>
+</view>

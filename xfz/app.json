@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/my/my",
+    "pages/my/card",
+    "pages/my/yue",
+    "pages/my/consumehistory",
+    "pages/my/storedhistory",
+    "pages/my/coupon",
+    "pages/my/coupondetail",
+    "pages/my/couponshop" 
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e06e27",
+    "navigationBarTitleText": "智慧商街",
+    "navigationBarTextStyle":"white"
+  }
+}

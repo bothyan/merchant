@@ -1,0 +1,54 @@
+.iconcard{
+    width: 133rpx;
+    height: 133rpx;
+    border-radius: 100%;
+    display: block;
+    margin: 50rpx auto 0;
+    z-index: 10;
+    position: relative;
+}
+.hd{
+    padding: 80rpx 30rpx 60rpx;
+    width: 550rpx;
+    margin: -67rpx auto 0;
+    border-radius: 20rpx;
+    border: 4rpx solid #eeeeee;
+    background: #fff;
+    box-shadow:0 2px 4px 0 #f8f8f8;
+}
+.title{
+    color: #2b2e35;
+    font-size: 30rpx;
+    font-weight: bold;
+    text-align: center;
+}
+.jine{
+    color: #2b2e35;
+    font-size: 48rpx;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10rpx;
+}
+.msg-hd{
+    display: flex;
+    margin-top:20rpx;
+}
+.label{
+    color: #2b2e35;
+    font-size: 28rpx;
+    width: 140rpx;
+}
+.con{
+    color: #999999;
+    font-size: 28rpx;
+    flex: 1;
+    line-height: 40rpx;
+}
+.dotted{
+    border-bottom: 2rpx dotted #eeeeee;
+    padding-bottom: 20rpx;
+}
+.addwxcard-b{
+    margin-top: 100rpx;
+    width: 610rpx;
+}
