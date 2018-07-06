@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>万物通科技(北京)有限公司</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+  <meta name="viewport" id="viewport" content="target-densitydpi=device-dpi,width=750,user-scalable=0" />
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/pay.css">
+  <script src="js/jquery.js"></script>
+</head>
+<body>
+  
+  <div class="jinebox">
+    <input class="jine" id="jine" type="number" placeholder="消费金额"></input>
+    <span>￥</span>
+  </div>
+  <p class="add-remarks" id="addRemarks">添加备注</p>
+  <div class="offers">
+    <p class="tips">以下优惠不可同享</p>
+    <ul class="offers-ul" id="offers-ul">
+        <li id="choosecoupon">
+            <span class="word">劵</span>
+            <div class="type">优惠券</div>
+            <span class="num" _num="5">-5￥</span>
+            <span class="radio"></span>
+        </li>
+        <li>
+            <span class="word">会</span>
+            <div class="type">会员权益(98折)</div>
+            <span class="num" _num="10">-10￥</span>
+            <span class="radio"></span>
+        </li>
+    </ul>
+  </div>
+  <p class="submit" id="submit">确认买单<span class="spanjines"></span></p>
+
+  <!-- 黑色透明蒙层 -->
+  <div class="overlays" id="overlays"></div> 
+
+  <!-- 备注层 --> 
+  <div class="remarklays" id="remarklays">
+    <p class="titles">添加付款备注</p>
+    <textarea name="remarkt" class="remarkt" id="remarkt"></textarea>
+    <div class="buttons">
+        <span class="cancel" id="cancel">取消</span>
+        <span class="confirm" id="confirm">确定</span>
+    </div>
+  </div>
+  <!-- 优惠券弹层 -->
+  <div class="couponlays" id="couponlays">
+    <div class="nav" id="nav">
+      <p class="hover">优惠券</p>
+      <p>红包</p>
+    </div>    
+    <div class="list-hd">
+      <div class="tips">折扣券与红包不能同时使用</div>   
+      <div class="coupon-box select">
+        <div class="list">
+            <div class="price">
+                <div class="price-num">￥<span>50</span></div>  
+                <div class="condition">满100元可用</div>   
+            </div>
+            <div class="msg">
+                <p class="name">新人开卡券</p>
+                <p class="num">共1000张</p>
+                <p class="period">有效期:30天内有效</p>
+            </div>
+            <div class="radio"></div>
+        </div>
+        <div class="list">
+            <div class="price">
+                <div class="price-num">￥<span>50</span></div>  
+                <div class="condition">满100元可用</div>   
+            </div>
+            <div class="msg">
+                <p class="name">新人开卡券</p>
+                <p class="num">共1000张</p>
+                <p class="period">有效期:30天内有效</p>
+            </div>
+            <div class="radio"></div>
+        </div>
+
+        <div class="list">
+            <div class="price">
+                <div class="price-num">￥<span>50</span></div>  
+                <div class="condition">满100元可用</div>   
+            </div>
+            <div class="msg">
+                <p class="name">新人开卡券</p>
+                <p class="num">共1000张</p>
+                <p class="period">有效期:30天内有效</p>
+            </div>
+            <div class="radio"></div>
+        </div>  
+      </div>
+      <div class="coupon-box">
+        <div class="list">
+            <div class="price">
+                <div class="price-num">￥<span>50</span></div>  
+                <div class="condition">满100元可用</div>   
+            </div>
+            <div class="msg">
+                <p class="name">红包</p>
+                <p class="num">共1000张</p>
+                <p class="period">有效期:30天内有效</p>
+            </div>
+            <div class="radio"></div>
+        </div>
+        <div class="list">
+            <div class="price">
+                <div class="price-num">￥<span>50</span></div>  
+                <div class="condition">满100元可用</div>   
+            </div>
+            <div class="msg">
+                <p class="name">红包</p>
+                <p class="num">共1000张</p>
+                <p class="period">有效期:30天内有效</p>
+            </div>
+            <div class="radio"></div>
+        </div>
+
+        <div class="list">
+            <div class="price">
+                <div class="price-num">￥<span>50</span></div>  
+                <div class="condition">满100元可用</div>   
+            </div>
+            <div class="msg">
+                <p class="name">红包</p>
+                <p class="num">共1000张</p>
+                <p class="period">有效期:30天内有效</p>
+            </div>
+            <div class="radio"></div>
+        </div>  
+      </div>  
+    </div>
+    <div class="coupon-buttons">
+      <span id="confirm-coupon">确认</span>
+    </div>
+
+  </div>
+  <!-- 支付弹层 --> 
+  <div class="paylays" id="paylays">  
+    <p class="title"><span>×</span>确认支付</p>
+    <div class="chuzhi choosetype">
+      <span class="word">储</span>  
+      <p class="jine">储值(余额300.32元)</p>
+      <span class="radio hover"></span>
+    </div>
+    <p class="ptitle">支付方式</p>
+    <div class="wxbox choosetype">
+      <span class="wxicon"></span>
+      <p class="jine">微信支付</p>
+      <span class="radio"></span>
+    </div>
+    <p class="pays" id="pays">确认支付<span class="spanjines"></span></p>
+  </div>
+  <script type="text/javascript" src="js/pay.js"></script>
+</body>
+</html>

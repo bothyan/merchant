@@ -1,0 +1,117 @@
+body{
+    background: #f0f0f3;
+}
+.card{
+    background: url(../images/cardbg.png) no-repeat;
+    width: 500px;
+    height: 312px;
+    margin: 30px auto 0;
+    box-shadow:0 2px 4px 0 #f8f8f8;
+    overflow: hidden;
+    padding-left: 38px;
+    position: relative;
+}
+.title-zh{
+    color: #ffffff;
+    font-size: 36px;
+    margin-top: 40px;
+}
+.title-en{
+    color: #ffffff;
+    font-size: 36px;
+}
+.card .tips{
+    color: #fff;
+    font-size: 22px;
+}
+.card .detail{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #694e2b;
+    font-size: 24px;
+}
+.hd{
+    width: 640px;
+    height: 800px;
+    background: #fff;
+    border-radius: 40px;
+    margin: -140px auto 0;
+    overflow: hidden;
+}
+.hd .title{
+    color: #333333;
+    font-size: 28px;
+    margin:165px 0 20px;
+    text-align: center;
+}
+.wtips{
+    width: 550px;
+    height: 70px;
+    line-height: 70px;
+    margin: 0 auto;
+    text-align: left;
+    color: #999;
+    font-size: 24px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.inputbox{
+    width: 550px;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    line-height: 70px;
+}
+.inputbox label{
+    font-size: 30px;
+    color: #333333;
+    font-weight: bold;
+    height: 70px;
+}
+.inputbox input{
+    margin-left: 20px;
+    font-size: 30px;
+    color: #333333;
+    height: 70px;
+    flex:1;
+}
+.radiobox{
+    width: 550px;
+    height: 40px;
+    margin: 30px auto 40px;
+    display: flex;
+    align-items: center;
+}
+.radiobox input{
+    width: 20px;
+    height: 20px;
+}
+.radiobox label{
+    font-size: 24px;
+    margin-left: 20px;
+    color: #999999;
+}
+.radiobox label span{
+    color: #4069b4
+}
+.submit{
+    background: #62be85;
+    width: 550px;
+    margin: 0 auto;
+    height: 70px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    display: block;
+}
+.b-tips{
+    position: fixed;
+    bottom: 20px;
+    font-size: 24px;
+    color: #999;
+    text-align: center;
+    width: 100%;
+    left: 0;
+}
