@@ -1,0 +1,72 @@
+body{
+    background: #f0f0f3;
+    padding-top: 30px;
+}
+
+.list{
+    width: 703px;
+    height: 161px;
+    margin:0 auto 20px;
+    background: url(../images/bgs1.png);
+}
+.list .status{
+    position: absolute;
+    width: 143px;
+    height: 105px;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+.list .price{
+    float: left;
+    width: 166px;
+    height: 161px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background: url(../images/couponbg1.png);
+}
+.list .condition{
+    font-size: 24px;
+}
+.price-num {
+    font-size: 26px;
+}
+.price-num span{
+    font-size: 73px;
+}
+.list .msg{
+    float: left;
+    padding: 0 25px;
+    height: 161px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 537px;
+}
+
+.list .name{
+    font-size: 30px;
+    color: #333333;
+}
+.list .times{
+    font-size: 24px;
+    color: #999;
+    padding-bottom: 10px;
+    border-bottom:1px solid #dbdbdb;
+}
+.list .b-hd{
+    margin-top: 10px;
+}
+.list .receive{
+    font-size: 20px;
+    color: #ff9b1f;
+    border: 1px solid #ff9b1f;
+    width: 115px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    float: right;
+}

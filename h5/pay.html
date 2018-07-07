@@ -15,7 +15,7 @@
 <body>
   
   <div class="jinebox">
-    <input class="jine" id="jine" type="number" placeholder="消费金额"></input>
+    <input class="jine" id="jine" placeholder="消费金额" readonly></input>
     <span>￥</span>
   </div>
   <p class="add-remarks" id="addRemarks">添加备注</p>
@@ -158,6 +158,36 @@
     </div>
     <p class="pays" id="pays">确认支付<span class="spanjines"></span></p>
   </div>
+
+  <!-- 键盘弹层 -->
+  <div class="keyboardlays" id="keyboardlays">
+    <table>
+      <tr>
+        <td class="key">1</td>
+        <td class="key">2</td>
+        <td class="key">3</td>
+        <td width="23%" class="keyclose"></td>
+      </tr>
+      <tr>
+        <td class="key">4</td>
+        <td class="key">5</td>
+        <td class="key">6</td>
+        <td rowspan="3" class="keyfirm">完成</td>
+      </tr>
+      <tr>
+        <td class="key">7</td>
+        <td class="key">8</td>
+        <td class="key">9</td>
+      </tr>
+      <tr>
+        <td class="hidekey"></td>
+        <td class="key">0</td>
+        <td class="key">.</td>
+      </tr>
+    </table> 
+  </div>
+
+
   <script type="text/javascript" src="js/pay.js"></script>
 </body>
 </html>

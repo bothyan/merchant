@@ -5,6 +5,7 @@
         offernum:0,
         jineval:0,
         paytext:"",
+        inputval:"",
         init:function(){
             this.handle();
         },
@@ -15,23 +16,19 @@
                 $(this).find(".radio").addClass("hover");
                 var num =  $(this).find(".num").attr("_num");
                 that.offernum = num;
-                var jine =  that.jineval - num;
+                var jine =  that.inputval - num;
                 if(jine>0){
                     $("span.spanjines").text(jine+"元"); 
                 } else{
                     $("span.spanjines").text(""); 
                 }  
             });
-            $("#jine").on("input",function(){
-                var jine = $(this).val();
-                that.jineval = jine;
-                jine =  jine - that.offernum;
-                if(jine>0){
-                    $("span.spanjines").text(jine+"元"); 
-                } else{
-                    $("span.spanjines").text(""); 
-                }    
+            $("#jine").bind("click",function(){
+                $("#keyboardlays").animate({
+                    "bottom":0
+                },300)
             });
+
             $("#addRemarks").bind("click",function(){
                 $("#overlays,#remarklays").fadeIn();
             })
@@ -69,10 +66,41 @@
             });
             $("#choosecoupon").bind("click",function(){
                 $("#overlays,#couponlays").fadeIn();
-            })
+            });
             $("#confirm-coupon").bind("click",function(){
                 $("#overlays,#couponlays").hide();
-            })
+            });
+
+            $("#keyboardlays .keyclose").bind("click",function(){
+                if(that.inputval.length>0){
+                    that.inputval = that.inputval.substring(0,that.inputval.length-1)
+                    $("#jine").val(that.inputval);
+                }
+            });
+
+            $("#keyboardlays .keyfirm").bind("click",function(){
+                $("#keyboardlays").animate({
+                    "bottom":'-466px'
+                },300)
+                var jine =  that.inputval - that.offernum;
+                if(jine>0){
+                    $("span.spanjines").text(jine+"元"); 
+                } else{
+                    $("span.spanjines").text(""); 
+                }   
+            });
+
+            $("#keyboardlays .hidekey").bind("click",function(){
+                $("#keyboardlays").animate({
+                    "bottom":"-466px"
+                },300)
+            });
+
+            $("#keyboardlays .key").bind("click",function(){
+                var val = $(this).text();
+                that.inputval = that.inputval + val;
+                $("#jine").val(that.inputval);
+            });
         }
     }
 

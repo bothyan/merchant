@@ -381,3 +381,42 @@
     color: #999;
     margin-top: 10px;
 }
+.keyboardlays{
+    position: fixed;
+    bottom: -466px;
+    width: 750px;
+    left: 50%;
+    margin-left: -375px;
+    background: #fff;
+    height: 466px;
+
+}
+.keyboardlays table{
+    width: 100%;
+    height: 100%;
+    border-collapse:collapse;
+}
+.keyboardlays table td{
+    border: 1px solid #e4e4e4;
+    color: #333333;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: center;
+}
+.keyboardlays table td.keyfirm{
+    color: #fff;
+    background: #62be85;
+    font-size: 40px;
+}
+td.keyclose{
+    background: url(../images/closes.png) no-repeat center center;
+}
+td.hidekey{
+    background: url(../images/keyborad.png) no-repeat center center;
+}
+
+
+
+
+
+
