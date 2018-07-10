@@ -4,8 +4,8 @@
     var mainfun = {
         offernum:0,
         jineval:0,
-        paytext:"",
         inputval:"",
+        paytype:0,
         init:function(){
             this.handle();
         },
@@ -47,11 +47,20 @@
             });
 
             $("#paylays .choosetype").bind("click",function(){
+                 var type = $(this).attr("_type");
+                 mainfun.paytype = type;
                 $("#paylays .choosetype").find(".radio").removeClass("hover");
                 $(this).find(".radio").addClass("hover");
+
             });
             $("#pays").bind("click",function(){
-
+                //mainfun.paytype 0储蓄支付 1微信支付
+                var money = $("span.spanjines").eq(0).text();
+                if(money == ""){
+                    alert("请输入金额");
+                }
+                alert("支付类型："+mainfun.paytype)
+                alert("支付金额："+money)
             });
             $("#nav p").bind("click",function(){
                 var index = $(this).index();
@@ -81,7 +90,12 @@
             $("#keyboardlays .keyfirm").bind("click",function(){
                 $("#keyboardlays").animate({
                     "bottom":'-466px'
-                },300)
+                },300);
+
+                if(that.inputval.charAt(that.inputval.length - 1)== "."){
+                    that.inputval = parseInt(that.inputval);
+                    $("#jine").val(that.inputval);
+                }
                 var jine =  that.inputval - that.offernum;
                 if(jine>0){
                     $("span.spanjines").text(jine+"元"); 
@@ -98,9 +112,19 @@
 
             $("#keyboardlays .key").bind("click",function(){
                 var val = $(this).text();
-                that.inputval = that.inputval + val;
-                $("#jine").val(that.inputval);
+                var inputval = that.inputval + val;
+                if(val == "." && that.inputval.indexOf(".") == -1 && that.inputval !== ""){
+                    that.inputval = that.inputval + val;
+                    $("#jine").val(that.inputval);
+                }else if(/^\d+(\.\d{1,2})?$/.test(inputval)){
+                    that.inputval = inputval;
+                    $("#jine").val(inputval);
+                }
             });
+
+            $("#bindmember").bind("click",function(){
+                alert("绑定会员");
+            })
         }
     }
 

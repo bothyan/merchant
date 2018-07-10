@@ -19,7 +19,7 @@
     <span>￥</span>
   </div>
   <p class="add-remarks" id="addRemarks">添加备注</p>
-  <div class="offers">
+  <div class="offers" style="display: none">
     <p class="tips">以下优惠不可同享</p>
     <ul class="offers-ul" id="offers-ul">
         <li id="choosecoupon">
@@ -37,7 +37,7 @@
     </ul>
   </div>
   <p class="submit" id="submit">确认买单<span class="spanjines"></span></p>
-
+  <p class="submit" id="bindmember">绑定会员</p>
   <!-- 黑色透明蒙层 -->
   <div class="overlays" id="overlays"></div> 
 
@@ -145,13 +145,13 @@
   <!-- 支付弹层 --> 
   <div class="paylays" id="paylays">  
     <p class="title"><span>×</span>确认支付</p>
-    <div class="chuzhi choosetype">
+    <div class="chuzhi choosetype" _type="0">
       <span class="word">储</span>  
       <p class="jine">储值(余额300.32元)</p>
       <span class="radio hover"></span>
     </div>
     <p class="ptitle">支付方式</p>
-    <div class="wxbox choosetype">
+    <div class="wxbox choosetype" _type="1">
       <span class="wxicon"></span>
       <p class="jine">微信支付</p>
       <span class="radio"></span>
