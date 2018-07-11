@@ -2,21 +2,21 @@
     <view class="tophd"></view>
     <view class="datas">
         <view class="datas-hd">
-            <view class="num">2</view>
+            <view class="num">{{payCount}}</view>
             <view class="word">消费次数（次）</view>
         </view>  
         <view class="datas-hd">
-            <view class="num">300</view>
+            <view class="num">{{payAmount}}</view>
             <view class="word">消费总额（元）</view>
         </view>       
     </view>
     <view class="list-hd">
-        <view class="list" wx:for="{{[1,2,3]}}">
+        <view class="list" wx:for="{{list}}">
             <view class="left">
-                <text class="place">上地东路得实大厦店</text>   
-                <text class="time">2018-06-09 12:31</text>
+                <text class="place">{{item.storeName}}</text>   
+                <text class="time">{{item.ctime}}</text>
             </view>
-            <view class="right">-600</view>
+            <view class="right">-{{item.actualChargeAmount}}</view>
         </view>
         
     </view>

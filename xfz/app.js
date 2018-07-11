@@ -1,14 +1,17 @@
 //app.js
 App({
   globalData: {
-    xfz_token:wx.getStorageSync('xfz_token') || "",
+    scene:"",
+    //xfz_token:wx.getStorageSync('xfz_token') || "",
+    xfz_token:"",
     userInfo: null,
+    logingData:null,
     host:"https://ssl.zhihuishangjie.cn"
   },  
   urlMap:{},
   onLaunch: function () {
-    this.login();
     // 获取用户信息
+    this.initUrlMap();
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -25,18 +28,23 @@ App({
               }
             }
           })
+        }else{
+          console.log("5555");
         }
       }
     })
   },
   login:function(cb){
     var that = this;
-    console.log(that.globalData.host)
     // 登录
     wx.login({
       success: function(res){
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res.code);
+        var data = {};
+        data.code = res.code;
+        if(that.globalData.scene !==""){
+          data.scene = that.globalData.scene
+        }
         wx.request({
             url: that.globalData.host+"/app/user/login",
             header: {
@@ -44,12 +52,18 @@ App({
                 "X-Requested-With": "XMLHttpRequest"
             },
             method:"post",
-            data:{
-              code:res.code
-            },
+            data:data,
             success: function(res) {   
-             console.log(res);
-             typeof cb == "function" && cb();
+              var data = res.data;
+              if(data.code == 0){
+                var xfz_token = data.data.accessToken;
+                that.globalData.xfz_token = xfz_token;
+                /*if(data.data.nickName){ //有值，非第一次
+                }else{ //null 第一次登录 }
+                //wx.setStorageSync('xfz_token', xfz_token);
+                */
+                typeof cb == "function" && cb(data.data);
+              }
             }
         })
       }
@@ -58,8 +72,32 @@ App({
   initUrlMap:function(){
     var host = this.globalData.host
     var urlMap = {
-      login: host+"/app/user/login"
+      login: host+"/app/user/login",
+      updateUserInfo: host+"/app/user/updateWXUserInfo",
+      userCard: host+"/app/user/card",
+      chooseMerchant: host+"/app/user/chooseMerchant",
+      merchantList: host+"/app/user/merchantList",
+      chargeList: host+"/app/user/balance/chargeList",
+      balancesummary: host+"/app/user/balance/summary",
+      orderList: host+"/app/user/pay/orderList",
+      paySummary: host+"/app/user/pay/summary"
     };
     this.urlMap = urlMap;
-  }
+  },
+  getJson:function(url,method,data,successCallBack){
+    var that = this;
+    var data = data;
+    wx.request({
+      url: url,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'accessToken':that.globalData.xfz_token
+      },
+      method:method,
+      data:data,
+      success: function(res) {   
+        successCallBack(res);
+      }
+    })
+  } 
 })

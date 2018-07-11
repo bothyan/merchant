@@ -7,11 +7,12 @@ Page({
 
   },
   onLoad: function () {
-    
+    this.getData();
   },
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+  getData:function(){
+    app.getJson(app.urlMap.userCard,"get",{
+    },function(res){
+      console.log(res);
+    });
+  }
 })

@@ -86,17 +86,16 @@
     font-size: 24rpx;
     color: #999999;
 }
-.num2{
-    font-size: 36rpx;
-    color: #333333;
-    font-weight: bold;
-}
-.num1,.num3{
+.num1{
     font-size: 36rpx;
     color: #ff9b1f;
     font-weight: bold;
 }
-
+.num2,.num3,.num1{
+    font-size: 36rpx;
+    color: #333333;
+    font-weight: bold;
+}
 .myhd{
     height: 90rpx;
     border-bottom: 2rpx solid #f4f4f4;

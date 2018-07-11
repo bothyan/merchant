@@ -415,8 +415,68 @@ td.hidekey{
     background: url(../images/keyborad.png) no-repeat center center;
 }
 
+.chuload{
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+    background: rgba(0,0,0,0.5);
+    z-index:1000;
+    border-radius: 20px;
+    overflow: hidden;
+    display: none;
+}
+.chuload .tips{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+.chuload .dot{
+    text-align: center;
+    margin-top: 20px;
+}
+.chuload span{
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-block;
+    -webkit-animation: bgAni 0.75s linear infinite alternate; 
+}
+.chuload .span1{
+    -webkit-animation-delay:0.25s;   
+}
+.chuload .span2{
+    -webkit-animation-delay:0.50s;   
+    margin-left: 10px;
+}
+.chuload .span3{
+    -webkit-animation-delay:0.75s;  
+    margin-left: 10px; 
+}
 
 
+@-webkit-keyframes bgAni{   
+    0%{   
+        opacity: 1;   
 
+    }   
+    100%{   
+        opacity: 0.2;   
+    }   
+}  
+@keyframes bgAni {
+    0%{   
+        opacity: 1;   
 
+    }   
+    100%{   
+        opacity: 0.2;   
+    }  
+}
 

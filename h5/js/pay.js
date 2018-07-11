@@ -6,6 +6,7 @@
         jineval:0,
         inputval:"",
         paytype:0,
+        paytag:true,
         init:function(){
             this.handle();
         },
@@ -54,13 +55,25 @@
 
             });
             $("#pays").bind("click",function(){
-                //mainfun.paytype 0储蓄支付 1微信支付
-                var money = $("span.spanjines").eq(0).text();
-                if(money == ""){
-                    alert("请输入金额");
+                if(mainfun.paytag){  //mainfun.paytag true时，才能支付;
+
+                    //$("#chuload").show(); //储值支付loading显示
+                    //$("#chuload").hide(); //储值支付loading隐藏
+                    
+                    //mainfun.paytype 0储蓄支付 1微信支付
+                    var money = $("span.spanjines").eq(0).text();
+                    if(money == ""){
+                        alert("请输入金额");
+                        return
+                    }
+                    alert("支付类型："+mainfun.paytype)
+                    alert("支付金额："+money)
+                    mainfun.paytag = false; //支付未成功，回调函数mainfun.paytag置为true可以再次支付
+                    //...支付逻辑
                 }
-                alert("支付类型："+mainfun.paytype)
-                alert("支付金额："+money)
+
+
+               
             });
             $("#nav p").bind("click",function(){
                 var index = $(this).index();

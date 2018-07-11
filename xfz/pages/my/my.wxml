@@ -2,7 +2,7 @@
     <view class="hds"></view>
     <view class="header" bindtap="tocard">
         <view class="avtar-hd">
-            <image class="avtar" src="../../images/temp/avtar.png"></image>
+            <image class="avtar" src="{{userInfo.headImg  || userInfo.avatarUrl}}"></image>
         </view>
         <view class="msg-hd">
             <view class="code-hd">
@@ -11,24 +11,24 @@
             </view>
             <view class="name-hd">
                 <view class="name-level">
-                    <view class="name">向日葵小姐姐</view>
-                    <view class="level">lv2</view>
+                    <view class="name">{{userInfo.nickName}}</view>
+                    <!-- <view class="level">lv2</view> -->
                 </view>
-                <view class="phone">29760097740976</view>
+               <!--  <view class="phone">29760097740976</view> -->
             </view>    
         </view>
     </view>
     <view class="datas">
-        <view class="datas-hd" bindtap="toyue">
-            <text class="num1">300.9</text>
+        <view class="datas-hd">
+            <text class="num1">{{balance}}</text>
             <text class="words">余额</text>
         </view>
         <view class="datas-hd">
-            <text class="num2">200</text>
+            <text class="num2">0</text>
             <text class="words">积分</text>
         </view>
-        <view class="datas-hd" bindtap="tocoupon">
-            <text class="num3">8</text>
+        <view class="datas-hd">
+            <text class="num3">0</text>
             <text class="words">优惠券</text>
         </view>
     </view>

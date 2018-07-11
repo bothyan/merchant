@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/index/chooseMerchant",
     "pages/my/my",
     "pages/my/card",
     "pages/my/yue",
