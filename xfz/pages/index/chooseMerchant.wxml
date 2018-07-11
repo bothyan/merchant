@@ -3,4 +3,5 @@
         <view class="mname">{{item.name}}</view>
         <view class="enter">进入></view>
     </view>
+    <view wx:if="{{mlist.length == 0}}">暂无商户列表</view>
 </view>
