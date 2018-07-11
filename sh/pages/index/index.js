@@ -7,6 +7,9 @@ Page({
 
   },
   onLoad: function () {
+    this.getData();
+  },
+  getData:function(){
     
   },
   members: function() {

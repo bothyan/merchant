@@ -3,7 +3,7 @@
         <image class="bg" src="../../images/my/bg.png"></image>
         <image class="avtar" src="../../images/temp/avtar.png" mode="aspectFill"></image>
         <image class="setings" src="../../images/my/seting.png" bindtap="tagsetting"></image>
-        <view class="name">万物通科技有限公司</view>
+        <view class="name">{{shopInfo.storeName}}</view>
         <view class="title">
             <view class="vertify">
                 <image src="../../images/my/dui.png"></image>

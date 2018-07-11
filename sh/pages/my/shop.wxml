@@ -2,17 +2,22 @@
     <image class="banner" src="../../images/temp/shop.png" style="width: 750rpx;height: 257rpx;"></image>
     <view class="myhd">
         <text>门店名称</text>
+        <text class="words">{{shopInfo.storeName}}</text>
     </view>
     <view class="myhd">
         <text>门店地址</text>
+        <text class="words">{{shopInfo.address}}</text>
     </view>
     <view class="myhd">
         <text>经营品类</text>
+        <text class="words">{{shopInfo.des}}</text>
     </view>
     <view class="myhd">
         <text>联系电话</text>
+        <text class="words">{{shopInfo.contactPhone}}</text>
     </view>
     <view class="myhd" style="border:0">
         <text>联系人</text>
+        <text class="words">{{shopInfo.contactsPersonName}}</text>
     </view>
 </view>
