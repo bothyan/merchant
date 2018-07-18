@@ -1,30 +1,31 @@
 <view class="container">
-    <view class="avtar-hd" bindtap="upload">
-        <image src="../../images/member/avtarnull.png" /> 
-        <view>上传头像</view>  
+    <view class="avtar-hd">
+       <image class="avtar" src="{{useInfos.headImg}}" mode="aspectFill"></image> 
+        <!-- <view>上传头像</view>   -->
     </view>
     <view class="form-hd">
         <text>真实姓名</text>
-        <input  placeholder="填写姓名" placeholder-style="color:#999" />
+        <input placeholder="填写姓名" value="{{useInfos.name}}" bindinput="changeName" />
     </view>
     <view class="form-hd">
         <text space="emsp">性  别</text>
-        <radio-group class="radio-group" bindchange="radioChange">
-          <label class="radio radio1">
-            <radio value="1"/>女
-          </label> 
-          <label class="radio">
-            <radio value="0"/>男
-          </label>   
-        </radio-group>
+        <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sexArray}}">
+            <view class="picker">
+              {{sexArray[sexIndex]}}
+            </view>
+        </picker>
     </view>
     <view class="form-hd">
         <text>手机号码</text>
-        <input placeholder="填写手机号码" placeholder-style="color:#999"  />
+        <input placeholder="填写手机号码" value="{{useInfos.phone}}" bindinput="changePhone" type="number"></input>
     </view>
     <view class="form-hd">
         <text space="emsp">生  日</text>
-        <input placeholder="填写生日" placeholder-style="color:#999"  />
+        <picker mode="date" value="{{useInfos.birthday}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="picker">
+              {{useInfos.birthday}}
+            </view>
+        </picker>
     </view>
-    <button class="button login-register" bindtap="register">登录</button>
+    <button class="button login-register" bindtap="register">注册</button>
 </view>

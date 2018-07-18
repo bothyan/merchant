@@ -1,12 +1,12 @@
 <view class="container">
     <view class="amount-hd">
         <view class="tips">储值金额(元)：</view>  
-        <textarea value="{{money}}" bindinput="money" ></textarea> 
+        <input value="{{money}}" bindinput="money" type="digit"></input> 
         <view class="place">
             <image src="../../images/member/icon8.png" style="width: 22rpx;height: 24rpx;"></image>
-            <text>上地东路得实大厦店</text>
+            <text>{{shopName}}</text>
         </view>   
-        <view class="options-hd">
+        <!-- <view class="options-hd">
             <view class="options" bindtap="choosemoney" data-money="1000">
                 <view class="rmb">1000元</view> 
                 <view class="offer">充值送100元</view> 
@@ -19,23 +19,23 @@
                 <view class="rmb">3000元</view> 
                 <view class="offer">充值送500元</view> 
             </view>
-        </view>      
+        </view>  -->     
     </view>
     <button class="button confirm-b" bindtap="toconfirm1">确认</button>
 
     <view wx:if="{{showpop}}" class="poppay" bindtap="closepop">
         <view class="pays">
-            <view class="pay-hd" data-index="0" catchtap="choosepay">
+            <view class="pay-hd" data-index="0" data-type="WEICHAR" catchtap="choosepay">
                 <image src="../../images/member/iconwx.png" style="width: 46rpx;height: 41rpx;"></image>
                 <text>微信支付</text>
                 <image wx:if="{{payarr[0]}}" src="../../images/member/dui.png" style="width: 50rpx;height: 42rpx"></image>
             </view>        
-            <view class="pay-hd" data-index="1" catchtap="choosepay">
+            <view class="pay-hd" data-index="1" data-type="ALIPAY" catchtap="choosepay">
                 <image src="../../images/member/iconzhi.png" style="width: 47rpx;height: 47rpx;"></image>
                 <text>支付宝支付</text>
                 <image wx:if="{{payarr[1]}}" src="../../images/member/dui.png" style="width: 50rpx;height: 42rpx"></image>
             </view> 
-            <view class="pay-hd" data-index="2" catchtap="choosepay">
+            <view class="pay-hd" data-index="2" data-type="CASH" catchtap="choosepay">
                 <image src="../../images/member/iconrmb.png" style="width: 51rpx;height: 37rpx;"></image>
                 <text>现金支付</text>
                 <image wx:if="{{payarr[2]}}" src="../../images/member/dui.png" style="width: 50rpx;height: 42rpx"></image>     

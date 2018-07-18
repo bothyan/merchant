@@ -5,7 +5,7 @@
             <image src="../../images/searchicon.png" style="width: 25rpx;height: 25rpx;"></image>
             <input placeholder="请输入手机号" focus="{{searchfocus}}" confirm-type="search" bindconfirm="tosearch"></input>
         </view>
-        <image class="code" src="../../images/temp/code.png" />
+        <image class="code" src="{{codeImg}}" />
         <view class="tips1">请使用微信扫描二维码</view>
         <view class="tips2">顾客使用微信扫描、输入手机号可以</view>
     </view>

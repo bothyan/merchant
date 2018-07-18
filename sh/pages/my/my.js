@@ -31,5 +31,12 @@ Page({
     wx.navigateTo({
       url: 'marketing'
     })
+  },
+  logout:function(){
+    wx.setStorageSync('sh_token', ""); 
+    app.globalData.sh_token = "";
+    wx.navigateTo({
+      url: '../index/login'
+    })
   } 
 })

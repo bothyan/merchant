@@ -32,6 +32,8 @@
     color: #333;
     text-align: center;
     margin: 15rpx auto 10rpx;
+    height: 40rpx;
+    line-height: 40rpx;
 }
 .title{
     display: flex;

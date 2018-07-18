@@ -4,6 +4,7 @@ App({
     sh_token:wx.getStorageSync('sh_token') || "",
     host:"https://ssl.zhihuishangjie.cn"
   }, 
+  shoreConfig:null,
   urlMap:{},
   onLaunch: function () {
     this.initUrlMap();
@@ -44,5 +45,14 @@ App({
         successCallBack(res);
       }
     })
-  } 
+  },
+  getStoreConfig:function(cb){
+    var that = this;
+    this.getJson(this.urlMap.chargeConfig,"get",{},function(res){
+      if(res.data.code == 0){
+        that.shoreConfig = res.data.data;
+        typeof cb == "function" && cb(res.data.data);
+      }
+    });
+  }, 
 })

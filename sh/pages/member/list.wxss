@@ -64,10 +64,10 @@
     font-size: 28rpx;
 }
 .triangle .triangle1{
-    border-left: 5px dashed transparent;
-    border-right: 5px dashed transparent;
-    border-top: 5px solid #ff9b1f;
-    border-bottom: 5px dashed transparent;
+    border-left: 10rpx dashed transparent;
+    border-right: 10rpx dashed transparent;
+    border-top: 10rpx solid #ff9b1f;
+    border-bottom: 10rpx dashed transparent;
     height: 0;
     width: 0;
     font-size: 0;
@@ -77,10 +77,10 @@
     bottom: -3rpx;
 }
 .triangle .triangle2{
-    border-left: 5px dashed transparent;
-    border-right: 5px dashed transparent;
-    border-top: 5px dashed transparent;
-    border-bottom: 5px solid #999999;
+    border-left: 10rpx dashed transparent;
+    border-right: 10rpx dashed transparent;
+    border-top: 10rpx dashed transparent;
+    border-bottom: 10rpx solid #999999;
     height: 0;
     width: 0;
     font-size: 0;
@@ -90,10 +90,10 @@
     top: 0rpx;
 }
 .trianglehover .triangle1{
-    border-left: 5px dashed transparent;
-    border-right: 5px dashed transparent;
-    border-top: 5px solid #999999;
-    border-bottom: 5px dashed transparent;
+    border-left: 10rpx dashed transparent;
+    border-right: 10rpx dashed transparent;
+    border-top: 10rpx solid #999999;
+    border-bottom: 10rpx dashed transparent;
     height: 0;
     width: 0;
     font-size: 0;
@@ -103,10 +103,10 @@
     bottom: -6rpx;
 }
 .trianglehover .triangle2{
-    border-left: 5px dashed transparent;
-    border-right: 5px dashed transparent;
-    border-top: 5px dashed transparent;
-    border-bottom: 5px solid #ff9b1f;
+    border-left: 10rpx dashed transparent;
+    border-right: 10rpx dashed transparent;
+    border-top: 10rpx dashed transparent;
+    border-bottom: 10rpx solid #ff9b1f;
     height: 0;
     width: 0;
     font-size: 0;

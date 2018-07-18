@@ -1,25 +1,26 @@
 <view class="container">
     <view class="header" bindtap="toedit">
-        <image class="avtar" src="../../images/temp/member.png" mode="aspectFill"></image>   
+        <image class="avtar" src="{{useInfos.headImg}}" mode="aspectFill"></image>   
         <view class="msg">
             <view class="title">
-                <text>李三</text>
-                <image class="gender" src="../../images/gender2.png"></image>
-                <view class="chuzhi">已储值</view>
-                <view class="shiming">已实名</view>
+                <text>{{useInfos.name}}</text>
+                <image wx:if="{{useInfos.sex == 2}}" class="gender" src="../../images/gender2.png"></image>
+                <image wx:if="{{useInfos.sex == 1}}" class="gender" src="../../images/gender1.png"></image>
+                <view wx:if="{{useInfos.chargeCount>0}}" class="chuzhi">已储值</view>
+                <view wx:if="{{useInfos.realName}}" class="shiming">已实名</view>
             </view>
             <view class="basemsg">
-                <view class="basemsg-hd">
+                <view class="basemsg-hd" wx:if="{{useInfos.birthday}}" >
                     <image src="../../images/member/icon1.png" style="width: 21rpx;height: 22rpx;"></image>
-                    <text>1989-09-18</text>
+                    <text>{{useInfos.birthday}}</text>
                 </view>
-                <view class="basemsg-hd">
+                <view class="basemsg-hd" wx:if="{{useInfos.phone}}" >
                     <image src="../../images/member/icon2.png" style="width: 21rpx;height: 23rpx;"></image>
-                    <text>18347903875</text>
+                    <text>{{useInfos.phone}}</text>
                 </view>
                 <view class="basemsg-hd">
                     <image src="../../images/member/icon3.png" style="width: 22rpx;height: 21rpx;"></image>
-                    <text>上地东路得实大厦店</text>
+                    <text>{{useInfos.registerStore}}</text>
                 </view>
             </view>
             <image class="arrow-right arrow-right1" src="../../images/arrow.png"></image>
@@ -27,43 +28,43 @@
     </view>   
     <view class="datas">
         <view class="datas-hd">
-            <text class="num1">300.9</text>
+            <text class="num1">0</text>
             <text class="words">积分</text>
         </view>
         <view class="datas-hd" bindtap="tocoupon">
-            <text class="num2">9</text>
+            <text class="num1">0</text>
             <text class="words">优惠券</text>
         </view>
         <view class="datas-hd" bindtap="tostored">
-            <text class="num3">890.2</text>
+            <text class="num3">{{useInfos.balance}}</text>
             <text class="words">储值余额</text>
         </view>
     </view>
     <view class="datailhd">
         <text>最近消费时间</text>
-        <view>2017-10-12  11:30:23</view>
+        <view>{{useInfos.lastPayTime}}</view>
     </view>
     <view class="datailhd">
         <text>近期消费门店</text>
-        <view>得实大厦店</view>
+        <view>{{useInfos.lastPayStore}}</view>
     </view>
     <view class="datailhd">
         <text>累计交易笔数</text>
-        <view>73笔</view>
+        <view>{{useInfos.payCount}}笔</view>
     </view>
     <view class="datailhd">
         <text>平均消费金额</text>
-        <view>198.36元</view>
+        <view>{{useInfos.payAverage}}元</view>
     </view>
     <view class="datailhd">
         <text>累计消费金额</text>
-        <view>19118.36元</view>
+        <view>{{useInfos.payAmount}}元</view>
     </view>
     <view class="datailhd datailhd1" bindtap="toconsumption">
         <text>消费记录查询</text>
         <image class="arrow-right arrow-right2" src="../../images/arrow.png"></image>
     </view>
-    <view class="titlebox">
+    <!-- <view class="titlebox">
         <image src="../../images/index/titleb.png" style="width:11rpx;height:29rpx;"></image>  
         <text>参加的会员权益</text>
     </view>
@@ -74,6 +75,6 @@
     <view class="datailhd datailhd2">
         <text>累计消费金额</text>
         <view>9.8折</view>
-    </view>
+    </view> -->
     <button class="button chuzhi-b" bindtap="tochuzhi">会员储值</button>
 </view>

@@ -19,6 +19,17 @@
     margin-left: 40rpx;
     color: #999;
 }
+.datailhd picker{
+    flex: 1;
+    margin-left: 40rpx;
+    color: #999;
+    height: 100%;
+}
 .sava-b{
     margin-top: 50rpx;
+}
+picker .picker{
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
 }

@@ -8,11 +8,11 @@
     <view class="datas">
         <view class="data-hd">
             <view class="data-title">今日新增</view>
-            <view class="data-num"><text>100</text>人</view>
+            <view class="data-num"><text>{{summaryData.increaseUserCount}}</text>人</view>
         </view>
         <view class="data-hd">
             <view class="data-title">全部</view>
-            <view class="data-num"><text>100</text>人</view>
+            <view class="data-num"><text>{{summaryData.totalUserCount}}</text>人</view>
         </view>
     </view>
     <view class="nav">
@@ -38,19 +38,20 @@
         </view>
     </view>
     <view class="member-box">
-        <view class="member-list" wx:for="[1,2,3]" bindtap="todetail">
-            <image class="avtar" src="../../images/temp/member.png" mode="aspectFill"></image>
+        <view class="member-list" data-id="{{item.userId}}" wx:for="{{list}}" bindtap="todetail">
+            <image class="avtar" src="{{item.headImg}}" mode="aspectFill"></image>
             <view class="msg">
                 <view class="title">
-                    <text>李三</text>
-                    <image class="gender" src="../../images/gender2.png"></image>
-                    <view class="chuzhi">已储值</view>
-                    <view class="shiming">已实名</view>
+                    <text>{{item.name}}</text>
+                    <image wx:if="{{item.sex == 2}}" class="gender" src="../../images/gender2.png"></image>
+                    <image wx:if="{{item.sex == 1}}" class="gender" src="../../images/gender1.png"></image>
+                    <view wx:if="{{item.chargeCount>0}}" class="chuzhi">已储值</view>
+                    <view wx:if="{{item.realName}}" class="shiming">已实名</view>
                 </view>
-                <view class="phone">18347903875</view>
+                <view wx:if="{{item.phone}}" class="phone">{{item.phone}}</view>
                 <view class="msg-data">
-                    <view>共消费<text>238.4</text>元</view>    
-                    <view class="sales">消费次数<text>4</text>次</view>      
+                    <view>共消费<text>{{item.payAmount}}</text>元</view>    
+                    <view class="sales">消费次数<text>{{item.payCount}}</text>次</view>      
                 </view>
             </view>
         </view>

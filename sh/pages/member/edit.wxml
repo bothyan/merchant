@@ -1,20 +1,29 @@
+
 <view class="container">
-    <image class="avtar" src="../../images/temp/member.png" mode="aspectFill"></image>  
+    <image class="avtar" src="{{useInfos.headImg}}" mode="aspectFill"></image>  
     <view class="datailhd">
         <text>真实姓名：</text>
-        <input value="李三"></input>
+        <input value="{{useInfos.name}}" bindinput="changeName"></input>
     </view>
     <view class="datailhd">
         <text space="emsp">性  别：</text>
-        <input value="男"></input>
+        <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sexArray}}">
+            <view class="picker">
+              {{sexArray[sexIndex]}}
+            </view>
+        </picker>
     </view>
     <view class="datailhd">
         <text>手机号码：</text>
-        <input value="18347903875"></input>
+        <input value="{{useInfos.phone}}" bindinput="changePhone" type="number"></input>
     </view>
     <view class="datailhd">
         <text space="emsp">生  日：</text>
-        <input value="1989-09-18"></input>
+        <picker mode="date" value="{{useInfos.birthday}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="picker">
+              {{useInfos.birthday}}
+            </view>
+        </picker>
     </view>     
 
     <button class="button sava-b" bindtap="sava">保存</button>

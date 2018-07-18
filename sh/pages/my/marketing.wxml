@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="myhd" data-index="0" bindtap="changes">
+    <!-- <view class="myhd" data-index="0" bindtap="changes">
         <image src="../../images/my/icon8.png" style="width: 31rpx;height: 29rpx;"></image>
         <text>优惠券抵现</text>
         <image wx:if="{{selectArr[0]}}" class="selects" src="../../images/my/select_h.png"></image>
@@ -10,14 +10,14 @@
         <text>红包抵现</text>
         <image wx:if="{{selectArr[1]}}" class="selects" src="../../images/my/select_h.png"></image>
         <image wx:else class="selects" src="../../images/my/select.png"></image>
-    </view>
-    <view class="myhd" data-index="2" bindtap="changes">
+    </view> -->
+    <view class="myhd" bindtap="changes">
         <image src="../../images/my/icon10.png" style="width: 30rpx;height: 30rpx;"></image>
         <text>储值支付</text>
-        <image wx:if="{{selectArr[2]}}" class="selects" src="../../images/my/select_h.png"></image>
+        <image wx:if="{{payCharge}}" class="selects" src="../../images/my/select_h.png"></image>
         <image wx:else class="selects" src="../../images/my/select.png"></image>
     </view>
-    <view class="myhd" data-index="3" bindtap="changes">
+    <!-- <view class="myhd" data-index="3" bindtap="changes">
         <image src="../../images/my/icon11.png" style="width: 31rpx;height: 23rpx;"></image>
         <text>会员折扣收益</text>
         <image wx:if="{{selectArr[3]}}" class="selects" src="../../images/my/select_h.png"></image>
@@ -28,7 +28,7 @@
         <text>会员折扣收益</text>
         <image wx:if="{{selectArr[4]}}" class="selects" src="../../images/my/select_h.png"></image>
         <image wx:else class="selects" src="../../images/my/select.png"></image>
-    </view>
+    </view> -->
     <view class="tips">
         <view class="tips1"><text>注：</text>●扫码收款时仅微信会员才享受会员优惠</view>
         <view>●请勾选会员自助买单时不能同享得优惠方式</view>

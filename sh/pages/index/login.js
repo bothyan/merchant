@@ -51,7 +51,8 @@ Page({
       success: function(res) { 
         wx.hideLoading()  
         if(res.data.code == 0){
-          wx.setStorageSync('sh_token', res.data.data.token);  
+          wx.setStorageSync('sh_token', res.data.data.token); 
+          app.globalData.sh_token = res.data.data.token; 
           wx.switchTab({
             url: 'index'
           })  
