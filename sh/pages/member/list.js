@@ -16,17 +16,31 @@ Page({
     },
     list:[],
     summaryData:null,
-    avtar:"../../images/temp/member.png"
+    avtar:"../../images/temp/member.png",
+    phone:""
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    if(options.phone){
+      this.setData({
+        phone:options.phone
+      })
+    }
     this.getList();
     this.getSummary();
   },
   getList:function(e){
     var that = this;
-    app.getJson(app.urlMap.queryUserList,"get",that.data.param,function(res){
+    wx.showLoading({
+      title: '加载中',
+    })
+    var param = JSON.parse(JSON.stringify(that.data.param));
+    if(that.data.phone !== ""){
+      param.phone = that.data.phone;
+    }
+    app.getJson(app.urlMap.queryUserList,"get",param,function(res){
       if(res.data.code == 0){
         console.log(res.data.data.list);
+        wx.hideLoading()
         that.setData({
           list:res.data.data.list
         })
@@ -47,6 +61,33 @@ Page({
     this.setData({
         searchfocus:true
     })
+  },
+  changephone:function(e){
+    /*this.setData({
+      phone:e.detail.value
+    })*/
+  },
+  tosearch:function(e){
+    var that = this;
+    var param = JSON.parse(JSON.stringify(that.data.param));
+    that.setData({
+      phone:e.detail.value
+    })
+    if(that.data.phone !== ""){
+      param.phone = e.detail.value;
+    }
+    wx.showLoading({
+      title: '加载中',
+    })
+    app.getJson(app.urlMap.queryUserList,"get",param,function(res){
+      console.log(res);
+      if(res.data.code == 0){
+        wx.hideLoading()
+        that.setData({
+          list:res.data.data.list
+        })
+      }
+    });
   },
   orders:function(e){
     var index = e.currentTarget.dataset.index;

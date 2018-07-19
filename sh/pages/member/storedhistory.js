@@ -36,7 +36,7 @@ Page({
         if(res.data.code == 0){
           var data = res.data.data;
           data.list.map(function(item,key){
-              item.ctime = util.formatTime(new Date(item.ctime))
+              item.ctime = util.formatTime(item.ctime)
               return item;
             });
           that.setData({

@@ -42,7 +42,16 @@ App({
       method:method,
       data:data,
       success: function(res) {   
-        successCallBack(res);
+        if(res.data.code == 401){
+          wx.setStorageSync('sh_token', ""); 
+          that.globalData.sh_token = "";
+          wx.redirectTo({
+            url: '/pages/index/login'
+          })
+        }else{
+          successCallBack(res);
+        }
+        
       }
     })
   },

@@ -9,9 +9,8 @@ Page({
     useInfos:null
   },
   onLoad: function (options) {
-    console.log(options.id);
     this.setData({
-      userId:options.id || 117
+      userId:options.id
     });
     this.getDetails();
   },
@@ -21,8 +20,8 @@ Page({
       console.log(res);
       if(res.data.code == 0){
         var data = res.data.data;
-        data.birthday = util.formatDate(new Date(data.birthday))
-        data.lastPayTime = util.formatTime(new Date(data.lastPayTime))
+        data.birthday = util.formatDate(data.birthday)
+        data.lastPayTime = util.formatTime(data.lastPayTime)
         if(data.payCount>0){
           data.payAverage = parseFloat(data.payAmount/data.payCount).toFixed(2);
         }else{
@@ -46,8 +45,9 @@ Page({
     })*/
   },
   tochuzhi:function(e){
+    var that = this;
     wx.navigateTo({
-      url: 'store'
+      url: 'recharge?id='+that.data.userId
     })
   },
   toconsumption:function(e){

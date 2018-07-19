@@ -18,3 +18,12 @@ button::after{ border: none; }
     width: 22rpx;
     height: 39rpx; 
 }
+
+.grays { 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}

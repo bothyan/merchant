@@ -13,19 +13,19 @@
         </view>
     </view>
 
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon1.png" style="width: 23rpx;height: 21rpx;"></image>
         <text>对账查询</text>
     </view>
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon2.png" style="width: 21rpx;height: 25rpx;"></image>
         <text>管理店员</text>
     </view>
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon3.png" style="width: 22rpx;height: 22rpx;"></image>
         <text>管理门店</text>
     </view>
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon4.png" style="width: 24rpx;height: 19rpx;"></image>
         <text>管理款台</text>
     </view>
@@ -39,7 +39,7 @@
         <text>店铺认证信息</text>
         <image class="arrow-right" src="../../images/arrow.png"></image>
     </view>
-    <view class="myhd" style="border:0">
+    <view class="grays myhd" style="border:0">
         <image src="../../images/my/icon7.png" style="width: 24rpx;height: 23rpx;"></image>
         <text>我的客服</text>
     </view>  

@@ -1,4 +1,8 @@
-const formatTime = date => {
+const formatTime = str => {
+  if(!str){
+    return
+  }
+  var date = new Date(str)
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -9,7 +13,11 @@ const formatTime = date => {
   return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
-const formatDate = date => {
+const formatDate = str => {
+  if(!str){
+    return
+  }
+  var date = new Date(str)
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()

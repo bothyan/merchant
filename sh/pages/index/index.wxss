@@ -61,6 +61,12 @@
     font-size: 28rpx;
     margin-left: 14rpx;
 }
+.zanwu{
+    color: #333333;
+    font-size: 28rpx;
+    padding: 30rpx 25rpx;
+    border-top: 2rpx solid #ebebeb;
+}
 .datas{
     display: flex;
     align-items: center; 

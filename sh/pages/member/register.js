@@ -24,7 +24,7 @@ Page({
       if(res.data.code == 0){
         var data = res.data.data;
         if(data.birthday){
-          data.birthday = util.formatDate(new Date(data.birthday))
+          data.birthday = util.formatDate(data.birthday)
         }else{
           data.birthday = ""
         }
@@ -71,7 +71,7 @@ Page({
       wx.showToast({
         title: '姓名不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -80,7 +80,7 @@ Page({
       wx.showToast({
         title: '性别不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -89,7 +89,7 @@ Page({
       wx.showToast({
         title: '电话不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -98,7 +98,7 @@ Page({
       wx.showToast({
         title: '手机号格式不对',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     } 
@@ -108,7 +108,7 @@ Page({
       wx.showToast({
         title: '生日不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -120,7 +120,7 @@ Page({
         wx.showToast({
           title: '修改成功',
           icon: 'success',
-          duration: 1000
+          duration: 1500
         })
         wx.navigateTo({
           url: 'recharge?id='+that.data.userId
@@ -129,7 +129,7 @@ Page({
         wx.showToast({
           title: res.data.message,
           icon: 'none',
-          duration: 1000
+          duration: 1500
         })
 
       }

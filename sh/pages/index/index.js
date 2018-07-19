@@ -17,4 +17,11 @@ Page({
       url: '../member/list'
     })
   },
+  notopen:function(){
+    wx.showToast({
+      title: '功能暂未开放',
+      icon: 'none',
+      duration: 1500
+    })
+  }
 })

@@ -62,6 +62,12 @@ App({
                 //wx.setStorageSync('xfz_token', xfz_token);
                 */
                 typeof cb == "function" && cb(data.data);
+              }else{
+                wx.showToast({
+                  title: res.data.message,
+                  icon: 'none',
+                  duration: 1500
+                })
               }
             }
         })
@@ -95,7 +101,16 @@ App({
       method:method,
       data:data,
       success: function(res) {   
-        successCallBack(res);
+        if(res.data.code == 0){
+          successCallBack(res);
+        }else{
+          wx.showToast({
+            title: res.data.message,
+            icon: 'none',
+            duration: 1500
+          })
+        }
+        
       }
     })
   } 

@@ -1,5 +1,6 @@
 {
   "pages":[
+    
     "pages/index/login",
     "pages/index/index",
     "pages/data/data",
@@ -30,16 +31,6 @@
           "iconPath":"images/nav/nav1.png",
           "selectedIconPath":"images/nav/nav1_h.png",
           "text":"首页"
-      },{
-          "pagePath":"pages/data/data",
-          "iconPath":"images/nav/nav2.png",
-          "selectedIconPath":"images/nav/nav2_h.png",
-          "text":"数据"
-      },{
-          "pagePath":"pages/message/message",
-          "iconPath":"images/nav/nav3.png",
-          "selectedIconPath":"images/nav/nav3_h.png",
-          "text":"消息"
       },{
           "pagePath":"pages/my/my",
           "iconPath":"images/nav/nav4.png",

@@ -26,15 +26,16 @@
     <view wx:if="{{showpop}}" class="poppay" bindtap="closepop">
         <view class="pays">
             <view class="pay-hd" data-index="0" data-type="WEICHAR" catchtap="choosepay">
-                <image src="../../images/member/iconwx.png" style="width: 46rpx;height: 41rpx;"></image>
-                <text>微信支付</text>
+                <image src="../../images/member/iconzhi.png" style="width: 47rpx;height: 47rpx;"></image>
+                <image src="../../images/member/iconwx.png" style="width: 46rpx;height: 41rpx;margin-left:30rpx"></image>
+                <text>微信支付宝</text>
                 <image wx:if="{{payarr[0]}}" src="../../images/member/dui.png" style="width: 50rpx;height: 42rpx"></image>
             </view>        
-            <view class="pay-hd" data-index="1" data-type="ALIPAY" catchtap="choosepay">
-                <image src="../../images/member/iconzhi.png" style="width: 47rpx;height: 47rpx;"></image>
+            <!-- <view class="pay-hd" data-index="1" data-type="ALIPAY" catchtap="choosepay">
+                
                 <text>支付宝支付</text>
                 <image wx:if="{{payarr[1]}}" src="../../images/member/dui.png" style="width: 50rpx;height: 42rpx"></image>
-            </view> 
+            </view>  -->
             <view class="pay-hd" data-index="2" data-type="CASH" catchtap="choosepay">
                 <image src="../../images/member/iconrmb.png" style="width: 51rpx;height: 37rpx;"></image>
                 <text>现金支付</text>

@@ -32,11 +32,11 @@
             <text class="words">优惠券</text>
         </view>
     </view>
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon1.png" style="width: 34rpx;height: 30rpx;"></image>
         <text>我的红包</text>
     </view>
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon2.png" style="width: 31rpx;height: 29rpx;"></image>
         <text>我的计次卡</text>
     </view>
@@ -50,7 +50,7 @@
         <text>充值记录</text>
         <image class="arrow-right" src="../../images/arrow.png"></image>
     </view>
-    <view class="myhd">
+    <view class="grays myhd">
         <image src="../../images/my/icon4.png" style="width: 30rpx;height: 24rpx;"></image>
         <text>我的发票</text>
     </view>

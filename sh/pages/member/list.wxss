@@ -17,7 +17,7 @@
     color: #333;
     font-size: 24rpx;
     margin-left: 10rpx;
-    width: 400rpx;
+    width: 200rpx;
 }
 .datas{
     height: 180rpx;

@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     console.log(options.id);
     this.setData({
-      userId:options.id || 10
+      userId:options.id || 12
     });
     this.getDetails();
   },
@@ -24,7 +24,7 @@ Page({
       console.log(res);
       if(res.data.code == 0){
         var data = res.data.data;
-        data.birthday = util.formatDate(new Date(data.birthday))
+        data.birthday = util.formatDate(data.birthday)
         that.setData({
           useInfos:data,
           sexIndex:data.sex - 1
@@ -54,6 +54,7 @@ Page({
   },
   sava:function(){
     var param = {};
+    var that = this;
     var useInfos = this.data.useInfos;
     param.userId = this.data.userId;
     param.realName = useInfos.name;
@@ -67,7 +68,7 @@ Page({
       wx.showToast({
         title: '姓名不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -76,7 +77,7 @@ Page({
       wx.showToast({
         title: '性别不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -85,7 +86,7 @@ Page({
       wx.showToast({
         title: '电话不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -94,7 +95,7 @@ Page({
       wx.showToast({
         title: '手机号格式不对',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     } 
@@ -104,7 +105,7 @@ Page({
       wx.showToast({
         title: '生日不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }
@@ -116,16 +117,17 @@ Page({
         wx.showToast({
           title: '修改成功',
           icon: 'success',
-          duration: 1000
+          duration: 1500
         })
-        
+        wx.navigateTo({
+          url: 'detail?id='+that.data.userId
+        })
       }else{
         wx.showToast({
           title: res.data.message,
           icon: 'none',
-          duration: 1000
+          duration: 1500
         })
-
       }
     });
 

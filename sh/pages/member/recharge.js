@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     console.log(options.id);
     this.setData({
-      userId:options.id || "117"
+      userId:options.id
     });
     this.getStoreConfig();
     this.getInfo();
@@ -54,7 +54,7 @@ Page({
       wx.showToast({
         title: '储值金额不能为空',
         icon: 'none',
-        duration: 1000
+        duration: 1500
       })
       return
     }else{
@@ -74,13 +74,6 @@ Page({
         onlyFromCamera: true,
         success: (res) => {
           console.log(res.result);
-          /*wx.showModal({
-            title: '扫码内容',
-            content: res.result,
-            success: function(res) {
-              
-            }
-          })*/
           wx.showLoading({
             title: '支付中...',
           })
@@ -98,7 +91,7 @@ Page({
               wx.showToast({
                 title: res.data.message,
                 icon: 'none',
-                duration: 1000
+                duration: 1500
               })
             }
           });
@@ -124,7 +117,7 @@ Page({
           wx.showToast({
             title: res.data.message,
             icon: 'none',
-            duration: 1000
+            duration: 1500
           })
         }
       });

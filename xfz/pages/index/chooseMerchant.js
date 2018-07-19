@@ -7,9 +7,9 @@ Page({
     mlist:[]
   },
   onLoad: function (options) {
-    var scene = decodeURIComponent(options.scene)
+    var scene = decodeURIComponent(options.scene) 
     var that = this;
-    if(scene){
+    if(options.scene){
         app.globalData.scene = scene;
         wx.navigateTo({
           url: '../my/my'
