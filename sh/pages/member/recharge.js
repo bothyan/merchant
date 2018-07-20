@@ -86,7 +86,9 @@ Page({
             console.log(res);
             if(res.data.code == 0){
               wx.hideLoading()
-
+              wx.navigateTo({
+                url: 'success?id='+res.data.data
+              })
             }else{
               wx.showToast({
                 title: res.data.message,
