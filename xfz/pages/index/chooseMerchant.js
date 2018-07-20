@@ -15,6 +15,9 @@ Page({
           url: '../my/my'
         })
     }else{
+        wx.showLoading({
+          title: '加载中',
+        })
         app.login(function(res){
             app.globalData.logingData = res
             that.getList();         
@@ -27,6 +30,7 @@ Page({
     app.getJson(app.urlMap.merchantList,"get",{
     },function(res){
         if(res.data.code == 0){
+            wx.hideLoading()
             var data = res.data.data;
             that.setData({
               mlist: data

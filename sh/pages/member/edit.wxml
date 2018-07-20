@@ -19,7 +19,7 @@
     </view>
     <view class="datailhd">
         <text space="emsp">生  日：</text>
-        <picker mode="date" value="{{useInfos.birthday}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <picker mode="date" value="{{useInfos.birthday}}" start="1950-01-01" end="2010-12-31" bindchange="bindDateChange">
             <view class="picker">
               {{useInfos.birthday}}
             </view>
