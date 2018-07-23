@@ -8,7 +8,13 @@ Page({
     userId:"",
     useInfos:null
   },
+  onShow:function(options){
+    
+  },
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     this.setData({
       userId:options.id
     });
@@ -30,6 +36,7 @@ Page({
         that.setData({
           useInfos:data
         })
+        wx.hideLoading()
       }
     });
   },

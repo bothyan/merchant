@@ -10,7 +10,13 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  onShow:function(e){
+    //this.onLoad();
+  },
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     if(app.globalData.scene){
       app.login(function(res){
@@ -19,6 +25,7 @@ Page({
           that.setData({
             userInfo: app.globalData.logingData
           })
+          wx.hideLoading()
         }else{ //null 第一次登录 
           that.loginBackUseInfo();
         }      
@@ -29,6 +36,7 @@ Page({
         that.setData({
           userInfo: app.globalData.logingData
         })
+        wx.hideLoading()
       }else{
         that.loginBackUseInfo();
       }

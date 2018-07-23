@@ -6,11 +6,18 @@ Page({
   data: {
 
   },
+  onShow:function(e){
+    console.log("Show");
+  },
   onLoad: function () {
+    console.log("Load");
+    wx.showLoading({
+      title: '加载中',
+    })
     this.getData();
   },
   getData:function(){
-    
+    wx.hideLoading()
   },
   members: function() {
     wx.navigateTo({

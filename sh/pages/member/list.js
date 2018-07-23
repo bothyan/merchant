@@ -7,7 +7,7 @@ Page({
     searchfocus:false,
     orderArr:["","","",""],
     param:{
-      pageSize:10,
+      pageSize:5,
       pageNo:1,
       createTimeOrder:"DESC",
       payAmountOrder:"DESC",
@@ -17,10 +17,15 @@ Page({
     list:[],
     summaryData:null,
     avtar:"../../images/temp/member.png",
-    phone:""
+    phone:"",
+    total:0
+  },
+  onShow:function(e){
+    
   },
   onLoad: function (options) {
-    if(options.phone){
+    var params = options || {};
+    if(params.phone){
       this.setData({
         phone:options.phone
       })
@@ -28,23 +33,41 @@ Page({
     this.getList();
     this.getSummary();
   },
-  getList:function(e){
+  onReachBottom:function(){
     var that = this;
+    if(that.data.total>that.data.list.length){
+      var param = that.data.param;
+      param.pageNo = param.pageNo+1
+      that.setData({
+        param:param
+      })
+      that.getList();
+    }else{
+      wx.showToast({
+        title: '已经到低了',
+        icon: 'none',
+        duration: 1000
+      })
+    }
+  },
+  getList:function(e){
     wx.showLoading({
       title: '加载中',
     })
+    var that = this;
     var param = JSON.parse(JSON.stringify(that.data.param));
     if(that.data.phone !== ""){
       param.phone = that.data.phone;
     }
     app.getJson(app.urlMap.queryUserList,"get",param,function(res){
       if(res.data.code == 0){
-        console.log(res.data.data.list);
-        wx.hideLoading()
+        var list = that.data.list.concat(res.data.data.list);
         that.setData({
-          list:res.data.data.list
+          list:list,
+          total:res.data.data.total
         })
       }
+      wx.hideLoading()
     });
   },
   getSummary:function(){
@@ -69,10 +92,13 @@ Page({
   },
   tosearch:function(e){
     var that = this;
-    var param = JSON.parse(JSON.stringify(that.data.param));
+    var param = that.data.param;
+    param.pageNo = 1;
     that.setData({
-      phone:e.detail.value
+      phone:e.detail.value,
+      param:param
     })
+    var param = JSON.parse(JSON.stringify(that.data.param));
     if(that.data.phone !== ""){
       param.phone = e.detail.value;
     }
@@ -80,11 +106,11 @@ Page({
       title: '加载中',
     })
     app.getJson(app.urlMap.queryUserList,"get",param,function(res){
-      console.log(res);
+      wx.hideLoading()
       if(res.data.code == 0){
-        wx.hideLoading()
         that.setData({
-          list:res.data.data.list
+          list:res.data.data.list,
+          total:res.data.data.total
         })
       }
     });
@@ -101,9 +127,11 @@ Page({
         order[index] = ""
         param[arr[index]] = "DESC"
     }
+    param.pageNo = 1;
     this.setData({
         orderArr:order,
-        param:param
+        param:param,
+        list:[]
     });   
     this.getList();
   },

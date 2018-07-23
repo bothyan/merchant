@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    mlist:[]
+    //mlist:[]
   },
   onLoad: function (options) {
     var scene = decodeURIComponent(options.scene) 
@@ -32,9 +32,22 @@ Page({
         if(res.data.code == 0){
             wx.hideLoading()
             var data = res.data.data;
+            console.log(data);
             that.setData({
               mlist: data
-            })
+            })  
+            if(data.length == 1){
+              var code = data[0].merchantCode;
+              app.getJson(app.urlMap.chooseMerchant,"post",{
+                  merchantCode:code
+              },function(res){
+                  if(res.data.code == 0){
+                     wx.navigateTo({
+                        url: '../my/my'
+                      })
+                  } 
+              });
+            }
         } 
     });
   },
