@@ -33,6 +33,9 @@ App({
       }
     })
   },
+  onShow :function(data){
+    console.log(data);
+  },
   login:function(cb){
     var that = this;
     // 登录

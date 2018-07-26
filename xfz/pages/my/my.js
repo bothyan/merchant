@@ -10,8 +10,8 @@ Page({
     hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  onShow:function(e){
-    //this.onLoad();
+  onShow:function(data){
+    console.log(data);
   },
   onLoad: function (options) {
     wx.showLoading({
@@ -138,6 +138,20 @@ Page({
     wx.navigateTo({
       url: 'card'
     })
+    /*wx.navigateToMiniProgram({
+      appId: 'wxeb490c6f9b154ef9', //固定为此 appid，不可改动
+      extraData: {
+        encrypt_card_id:"ThDxriOHZ76czYxn2KuAMGS97mCIs7ShSLmbPTrRj57KsA4ORZuNbbq72Hrtiax2",
+        outer_str:"wx3e96083ff8d73c66",
+        biz:"MzAxMzUxNTc1MA%3D%3D"
+      },
+      success: function() {
+      },
+      fail: function() {
+      },
+      complete: function() {
+      }
+    })*/
   },
   toyue:function(){
     wx.navigateTo({

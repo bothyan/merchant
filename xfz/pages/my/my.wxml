@@ -1,4 +1,5 @@
 <view class="container">
+<!-- <navigator target="miniProgram" app-id="wxeb490c6f9b154ef9" extra-data="{{data}}">会员卡开卡</navigator> -->
     <view class="hds"></view>
     <view class="header" bindtap="tocard">
         <view class="avtar-hd">
