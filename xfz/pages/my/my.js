@@ -11,7 +11,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onShow:function(data){
-    console.log(data);
+    
   },
   onLoad: function (options) {
     wx.showLoading({
@@ -20,14 +20,15 @@ Page({
     var that = this;
     if(app.globalData.scene){
       app.login(function(res){
+        console.log(res);
         app.globalData.logingData = res
-        if(app.globalData.logingData.nickName){ //有值，非第一次
+        if(!res.needOpenCard){ //有值，非第一次
           that.setData({
             userInfo: app.globalData.logingData
           })
           wx.hideLoading()
-        }else{ //null 第一次登录 
-          that.loginBackUseInfo();
+        }else{ //需要开卡
+          //that.loginBackUseInfo();
         }      
         that.balance();      
       });
@@ -38,7 +39,7 @@ Page({
         })
         wx.hideLoading()
       }else{
-        that.loginBackUseInfo();
+        //that.loginBackUseInfo();
       }
       that.balance();
     }
