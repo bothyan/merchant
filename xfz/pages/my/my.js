@@ -7,7 +7,7 @@ Page({
     balance:0,
     storedCount:"",
     userInfo: {},
-    hasUserInfo: true,
+    hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onShow:function(data){
@@ -20,27 +20,30 @@ Page({
     var that = this;
     if(app.globalData.scene){
       app.login(function(res){
-        console.log(res);
         app.globalData.logingData = res
-        if(!res.needOpenCard){ //有值，非第一次
+        console.log(res);
+        if(!res.needUserInfo){ //已开过卡
           that.setData({
-            userInfo: app.globalData.logingData
+            userInfo: app.globalData.logingData,
+            hasUserInfo:true
           })
-          wx.hideLoading()
         }else{ //需要开卡
-          //that.loginBackUseInfo();
-        }      
+         // that.loginBackUseInfo();
+        }  
+        wx.hideLoading()    
         that.balance();      
       });
     }else{
-      if(app.globalData.logingData.nickName){
+      console.log(app.globalData.logingData)
+      if(!app.globalData.logingData.needUserInfo){
         that.setData({
-          userInfo: app.globalData.logingData
+          userInfo: app.globalData.logingData,
+          hasUserInfo:true
         })
-        wx.hideLoading()
       }else{
         //that.loginBackUseInfo();
       }
+      wx.hideLoading()
       that.balance();
     }
   },
@@ -58,64 +61,17 @@ Page({
   },
   loginBackUseInfo:function(){
     var that = this;
+    console.log(app.globalData.userInfo)
     if (app.globalData.userInfo) {
       this.setData({
+        hasUserInfo: true,
         userInfo: app.globalData.userInfo
       })
       that.updateWXUserInfo();
-    } else if (this.data.canIUse){
-      this.setData({
-        hasUserInfo: false
-      })
-      wx.showModal({
-        title: '用户未授权',
-        content: '如需正常使用该小程序功能，请按下方的授权登录',
-        showCancel: false,
-        success: function (resbtn) {
-          if (resbtn.confirm) {
-            
-          }
-        }
-      })  
-      /*// 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        that.updateWXUserInfo();
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }*/
-    } else {
-      this.setData({
-        hasUserInfo: false
-      })
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          that.updateWXUserInfo();
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        },
-        fail: function () {
-          wx.showModal({
-            title: '用户未授权',
-            content: '如需正常使用该小程序功能，请按下方的授权登录',
-            showCancel: false,
-            success: function (resbtn) {
-              if (resbtn.confirm) {
-                
-              }
-            }
-          })  
-        }
-      })
     }
   },
   updateWXUserInfo:function(e){
+    var that = this;
     var userInfo = app.globalData.userInfo;
     app.getJson(app.urlMap.updateUserInfo,"post",{
       nickName:userInfo.nickName,
@@ -125,34 +81,51 @@ Page({
       province:userInfo.province,
       country:userInfo.country
     },function(res){
+      console.log(res);
+      if(res.data.code == 0){
+        wx.hideLoading()
+        that.tocard();
+      }
+      
     });
   },
   getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
-    this.updateWXUserInfo();
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    console.log(e);
+    if(e.detail.userInfo){
+      wx.showLoading({
+        title: '授权中',
+      })
+      app.globalData.userInfo = e.detail.userInfo
+      this.updateWXUserInfo();
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+    }
   },
   tocard: function() {
-    wx.navigateTo({
-      url: 'card'
-    })
-    /*wx.navigateToMiniProgram({
-      appId: 'wxeb490c6f9b154ef9', //固定为此 appid，不可改动
-      extraData: {
-        encrypt_card_id:"ThDxriOHZ76czYxn2KuAMGS97mCIs7ShSLmbPTrRj57KsA4ORZuNbbq72Hrtiax2",
-        outer_str:"wx3e96083ff8d73c66",
-        biz:"MzAxMzUxNTc1MA%3D%3D"
-      },
-      success: function() {
-      },
-      fail: function() {
-      },
-      complete: function() {
+    console.log(app.globalData.logingData)
+    if(app.globalData.logingData.needOpenCard){
+      var data = {
+        encrypt_card_id:decodeURIComponent(app.globalData.logingData.cardId),
+        outer_str:app.globalData.logingData.outerStr,
+        biz:app.globalData.logingData.biz
       }
-    })*/
+      wx.navigateToMiniProgram({
+        appId: 'wxeb490c6f9b154ef9', //固定为此 appid，不可改动
+        extraData: data,
+        success: function() {
+        },
+        fail: function(res) {
+        },
+        complete: function() {
+        }
+      })    
+    }else{
+      wx.navigateTo({
+        url: 'card'
+      })
+    }
   },
   toyue:function(){
     wx.navigateTo({

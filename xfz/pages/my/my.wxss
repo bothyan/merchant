@@ -8,6 +8,7 @@
     padding: 0 25rpx;
     display: flex;
     margin-top: -85rpx;
+    position: relative;
 }    
 .avtar-hd{
     width: 170rpx;

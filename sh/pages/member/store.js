@@ -53,7 +53,7 @@ Page({
     },function(res){
       if(res.data.code == 0){
         var infors = res.data.data;
-        //console.log(res.data.data);
+        console.log(res.data.data);
         if(infors.realName){
           wx.navigateTo({
             url: 'detail?id='+infors.userId

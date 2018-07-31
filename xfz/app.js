@@ -1,6 +1,7 @@
 //app.js
 App({
   globalData: {
+    needOpenCard:true,
     scene:"",
     //xfz_token:wx.getStorageSync('xfz_token') || "",
     xfz_token:"",
@@ -20,7 +21,6 @@ App({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
-
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -35,6 +35,57 @@ App({
   },
   onShow :function(data){
     console.log(data);
+    var that = this;
+
+    if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
+      var callbackdata = data.referrerInfo.extraData;
+      var params = that.params(callbackdata.wx_activate_after_submit_url.split("?")[1]);
+      wx.request({
+        url: "https://ssl.zhihuishangjie.cn/app/user/submitOpenCardInfo",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'accessToken':that.globalData.xfz_token
+        },
+        method:method,
+        data:{
+          encryptCode:params.encrypt_code,
+          acitvateTicket:callbackdata.activate_ticket,
+          cardId:callbackdata.card_id,
+          openId: params.openid
+        },
+        success: function(res) {   
+          console.log(res);
+          if(res.data.code == 0){
+            
+          }else{
+            wx.showToast({
+              title: res.data.message,
+              icon: 'none',
+              duration: 1500
+            })
+          }
+          
+        }
+      })
+    }
+/* wx.openSetting({
+      success: (res) => {
+      }
+    })*/
+  },
+  params:function(query){
+    var args = new Object();
+    var pairs = query.split("&"); // Break at ampersand
+    for(var i = 0; i < pairs.length; i++) {
+      var pos = pairs[i].indexOf('=');
+      if (pos == -1) continue;
+      var argname = pairs[i].substring(0,pos);
+      var value = pairs[i].substring(pos+1);
+      value = decodeURIComponent(value);
+      args[argname] = value;
+    }
+
+    return args;
   },
   login:function(cb){
     var that = this;

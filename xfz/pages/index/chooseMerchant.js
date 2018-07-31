@@ -7,7 +7,7 @@ Page({
     //mlist:[]
   },
   onLoad: function (options) {
-    var scene = decodeURIComponent(options.scene || "ef970d799cc26cae5e8fdae6904ef991") 
+    var scene = decodeURIComponent(options.scene || "39b1d44f7e1ded04cf1cae42310c54ea") 
     var that = this;
     if(scene){
         app.globalData.scene = scene;
@@ -23,7 +23,6 @@ Page({
             that.getList();         
         });
     }
-    
   },
   getList:function(){
     var that = this;

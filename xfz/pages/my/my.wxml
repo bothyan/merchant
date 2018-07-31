@@ -1,11 +1,11 @@
 <view class="container">
 <!-- <navigator target="miniProgram" app-id="wxeb490c6f9b154ef9" extra-data="{{data}}">会员卡开卡</navigator> -->
     <view class="hds"></view>
-    <view class="header" bindtap="tocard">
-        <view class="avtar-hd">
+    <view class="header">
+        <view class="avtar-hd" catchtap="tocard">
             <image class="avtar" src="{{userInfo.headImg  || userInfo.avatarUrl}}"></image>
         </view>
-        <view class="msg-hd">
+        <view class="msg-hd" catchtap="tocard">
             <view class="code-hd">
                 <text class="title">智慧商街</text>
                 <image class="code" src="../../images/my/iconcode.png" style="width: 37rpx;height: 37rpx"></image>
@@ -18,6 +18,7 @@
                <!--  <view class="phone">29760097740976</view> -->
             </view>    
         </view>
+        <button class="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> </button>
     </view>
     <view class="datas">
         <view class="datas-hd">
@@ -62,4 +63,3 @@
   <view wx:else>请升级微信版本</view>
 </view>
  -->
-<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
