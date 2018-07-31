@@ -54,7 +54,10 @@ Page({
       if(res.data.code == 0){
         var infors = res.data.data;
         console.log(res.data.data);
-        if(infors.realName){
+        wx.navigateTo({
+            url: 'detail?id='+infors.userId
+          })
+        /*if(infors.realName){
           wx.navigateTo({
             url: 'detail?id='+infors.userId
           })
@@ -62,7 +65,7 @@ Page({
           wx.navigateTo({
             url: 'register?id='+infors.userId
           })
-        }
+        }*/
       }else{
         that.getUserInfo();
       }

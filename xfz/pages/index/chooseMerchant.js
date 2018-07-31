@@ -7,7 +7,7 @@ Page({
     //mlist:[]
   },
   onLoad: function (options) {
-    var scene = decodeURIComponent(options.scene || "39b1d44f7e1ded04cf1cae42310c54ea") 
+    var scene = decodeURIComponent(options.scene || "1ff642649911c51e8a1b24abb29461a6") 
     var that = this;
     if(scene){
         app.globalData.scene = scene;

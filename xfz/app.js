@@ -34,19 +34,24 @@ App({
     })
   },
   onShow :function(data){
-    console.log(data);
     var that = this;
-
     if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
       var callbackdata = data.referrerInfo.extraData;
+      /*var callbackdata = {
+        activate_ticket: "fDZv9eMQAFfrNr3XBoqhb1ogS2+sWvYpkUv/HckCCZ+y4WaRfBnC9IJliHu3XdjAEk+TPd8SYkOQX3ZJGjgOlzoCeOtQvdhbNuhzk3lzFRk=",
+        card_id:"pzvvS1BdU3EC3eUd_djhCz_JqHgo",
+        code:"050648570399",
+        wx_activate_after_submit_url:"https://api.weixin.qq.com?card_id=pzvvS1BdU3EC3eUd_djhCz_JqHgo&encrypt_code=gSHaes50dDUoXJalv4Msld9%2BkhHS7%2FXX4kC5Uffz9B8%3D&openid=ozvvS1NoO-FETbq-lbejVCPsjvYU&outer_str=4"
+      }*/
       var params = that.params(callbackdata.wx_activate_after_submit_url.split("?")[1]);
+      console.log(params)
       wx.request({
         url: "https://ssl.zhihuishangjie.cn/app/user/submitOpenCardInfo",
         header: {
           'content-type': 'application/x-www-form-urlencoded',
           'accessToken':that.globalData.xfz_token
         },
-        method:method,
+        method:"post",
         data:{
           encryptCode:params.encrypt_code,
           acitvateTicket:callbackdata.activate_ticket,
@@ -115,6 +120,7 @@ App({
                 }else{ //null 第一次登录 }
                 //wx.setStorageSync('xfz_token', xfz_token);
                 */
+                //that.ajaxss();
                 typeof cb == "function" && cb(data.data);
               }else{
                 wx.showToast({
@@ -128,6 +134,46 @@ App({
       }
     })
   },
+  /*ajaxss:function(){
+    var that = this;
+    //if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
+      //var callbackdata = data.referrerInfo.extraData;
+      var callbackdata = {
+        activate_ticket: "fDZv9eMQAFfrNr3XBoqhb1ogS2+sWvYpkUv/HckCCZ+y4WaRfBnC9IJliHu3XdjAEk+TPd8SYkOQX3ZJGjgOlzoCeOtQvdhbNuhzk3lzFRk=",
+        card_id:"pzvvS1BdU3EC3eUd_djhCz_JqHgo",
+        code:"050648570399",
+        wx_activate_after_submit_url:"https://api.weixin.qq.com?card_id=pzvvS1BdU3EC3eUd_djhCz_JqHgo&encrypt_code=gSHaes50dDUoXJalv4Msld9%2BkhHS7%2FXX4kC5Uffz9B8%3D&openid=ozvvS1NoO-FETbq-lbejVCPsjvYU&outer_str=4"
+      }
+      var params = that.params(callbackdata.wx_activate_after_submit_url.split("?")[1]);
+      console.log(params)
+      wx.request({
+        url: "https://ssl.zhihuishangjie.cn/app/user/submitOpenCardInfo",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'accessToken':that.globalData.xfz_token
+        },
+        method:"post",
+        data:{
+          encryptCode:params.encrypt_code,
+          acitvateTicket:callbackdata.activate_ticket,
+          cardId:callbackdata.card_id,
+          openId: params.openid
+        },
+        success: function(res) {   
+          console.log(res);
+          if(res.data.code == 0){
+            
+          }else{
+            wx.showToast({
+              title: res.data.message,
+              icon: 'none',
+              duration: 1500
+            })
+          }
+          
+        }
+      })
+  },*/
   initUrlMap:function(){
     var host = this.globalData.host
     var urlMap = {
