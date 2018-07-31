@@ -7,7 +7,10 @@ App({
     xfz_token:"",
     userInfo: null,
     logingData:null,
-    host:"https://ssl.zhihuishangjie.cn"
+    host:"https://ssl.zhihuishangjie.cn",
+    card:{
+
+    }
   },  
   urlMap:{},
   onLaunch: function () {
@@ -35,6 +38,7 @@ App({
   },
   onShow :function(data){
     var that = this;
+    console.log(data);
     if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
       var callbackdata = data.referrerInfo.extraData;
       /*var callbackdata = {
@@ -43,6 +47,10 @@ App({
         code:"050648570399",
         wx_activate_after_submit_url:"https://api.weixin.qq.com?card_id=pzvvS1BdU3EC3eUd_djhCz_JqHgo&encrypt_code=gSHaes50dDUoXJalv4Msld9%2BkhHS7%2FXX4kC5Uffz9B8%3D&openid=ozvvS1NoO-FETbq-lbejVCPsjvYU&outer_str=4"
       }*/
+      var card = {};
+      card.code = callbackdata.code;
+      card.card_id = callbackdata.card_id;
+      that.globalData.card = card;
       var params = that.params(callbackdata.wx_activate_after_submit_url.split("?")[1]);
       console.log(params)
       wx.request({
@@ -61,7 +69,7 @@ App({
         success: function(res) {   
           console.log(res);
           if(res.data.code == 0){
-            
+
           }else{
             wx.showToast({
               title: res.data.message,
@@ -213,5 +221,14 @@ App({
         
       }
     })
+  },
+  getcard:function(cb){
+    var that = this;
+    that.getJson(that.urlMap.userCard,"get",{
+    },function(res){
+      if(res.data.code == 0){
+        typeof cb == "function" && cb(res.data.data);
+      }
+    });
   } 
 })

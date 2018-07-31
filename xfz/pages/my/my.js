@@ -27,6 +27,10 @@ Page({
             userInfo: app.globalData.logingData,
             hasUserInfo:true
           })
+          app.getcard(function(res){
+            console.log(res);
+            app.globalData.card = res;
+          });
         }else{ //需要开卡
          // that.loginBackUseInfo();
         }  
@@ -122,8 +126,19 @@ Page({
         }
       })    
     }else{
-      wx.navigateTo({
+      /*wx.navigateTo({
         url: 'card'
+      })*/
+      wx.openCard({
+        cardList: [
+          {
+            cardId: app.globalData.card.cardId,
+            code: app.globalData.card.code
+          }
+        ],
+        success: function(res) {
+          console.log(res);
+        }
       })
     }
   },
