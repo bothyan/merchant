@@ -34,7 +34,9 @@ Page({
             that.setData({
               mlist: data
             })  
+            console.log(data);
             if(data.length == 1){
+              wx.setStorageSync('xfzshopname', data[0].name);
               var code = data[0].merchantCode;
               app.getJson(app.urlMap.chooseMerchant,"post",{
                   merchantCode:code
@@ -51,6 +53,8 @@ Page({
   },
   enter: function(e) {
     var code = e.currentTarget.dataset.code;
+    var name = e.currentTarget.dataset.name;
+    wx.setStorageSync('xfzshopname', name);
     app.getJson(app.urlMap.chooseMerchant,"post",{
         merchantCode:code
     },function(res){

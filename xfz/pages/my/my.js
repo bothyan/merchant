@@ -8,6 +8,7 @@ Page({
     storedCount:"",
     userInfo: {},
     hasUserInfo: true,
+    shopname:"",
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onShow:function(data){
@@ -17,11 +18,13 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
+    this.setData({
+      shopname:wx.getStorageSync('xfzshopname') || "智慧商街"
+    })
     var that = this;
     if(app.globalData.scene){
       app.login(function(res){
         app.globalData.logingData = res
-        console.log(res);
         if(!res.needUserInfo){ //已开过卡
           that.setData({
             userInfo: app.globalData.logingData,
@@ -39,7 +42,6 @@ Page({
         that.balance();      
       });
     }else{
-      console.log(app.globalData.logingData)
       if(!app.globalData.logingData.needUserInfo){
         that.setData({
           userInfo: app.globalData.logingData,
@@ -134,7 +136,7 @@ Page({
       })    
     }else{
       wx.showLoading({
-        title: '加载中',
+        title: '跳转中',
       })
       wx.openCard({
         cardList: [

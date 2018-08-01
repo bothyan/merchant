@@ -1,5 +1,5 @@
 <view class="container">
-    <view class="header" bindtap="toedit">
+    <view class="header">
         <image class="avtar" src="{{useInfos.headImg}}" mode="aspectFill"></image>   
         <view class="msg">
             <view class="title">

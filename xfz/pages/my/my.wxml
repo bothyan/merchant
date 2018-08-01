@@ -8,7 +8,7 @@
         </view>
         <view class="msg-hd" catchtap="tocard">
             <view class="code-hd">
-                <text class="title">智慧商街</text>
+                <text class="title">{{shopname}}</text>
                 <image class="code" src="../../images/my/iconcode.png" style="width: 37rpx;height: 37rpx"></image>
             </view>
             <view class="name-hd">

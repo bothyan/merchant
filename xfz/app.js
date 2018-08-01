@@ -35,13 +35,18 @@ App({
     })
   },
   onShow :function(data){
+    //console.log(data);
     var that = this;
     if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
+      wx.showLoading({
+        title: '加载中',
+      })
       var callbackdata = data.referrerInfo.extraData;
       var card = {};
       card.code = callbackdata.code;
       card.card_id = callbackdata.card_id;
       that.globalData.card = card;
+      console.log(that.globalData.card);
       var params = that.params(callbackdata.wx_activate_after_submit_url.split("?")[1]);
       wx.request({
         url: "https://ssl.zhihuishangjie.cn/app/user/submitOpenCardInfo",
@@ -58,12 +63,13 @@ App({
         },
         success: function(res) {   
           if(res.data.code == 0){
+            wx.hideLoading()
             wx.showToast({
               title: "领取会员卡成功！",
               icon: 'none',
               duration: 1500
             })
-            app.globalData.logingData.needOpenCard = false;  
+            that.globalData.logingData.needOpenCard = false;  
           }else{
             wx.showToast({
               title: res.data.message,
