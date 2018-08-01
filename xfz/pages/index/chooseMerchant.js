@@ -7,9 +7,9 @@ Page({
     //mlist:[]
   },
   onLoad: function (options) {
-    var scene = decodeURIComponent(options.scene || "1ff642649911c51e8a1b24abb29461a6") 
+    var scene = decodeURIComponent(options.scene) 
     var that = this;
-    if(scene){
+    if(options.scene){
         app.globalData.scene = scene;
         wx.navigateTo({
           url: '../my/my'
@@ -31,7 +31,6 @@ Page({
         if(res.data.code == 0){
             wx.hideLoading()
             var data = res.data.data;
-            console.log(data);
             that.setData({
               mlist: data
             })  

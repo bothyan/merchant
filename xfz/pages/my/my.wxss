@@ -9,7 +9,11 @@
     display: flex;
     margin-top: -85rpx;
     position: relative;
-}    
+} 
+button.getUserInfo{
+    width: 500rpx;
+    margin: 20rpx auto 0;
+}   
 .avtar-hd{
     width: 170rpx;
     height: 170rpx;

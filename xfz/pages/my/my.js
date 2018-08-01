@@ -7,7 +7,7 @@ Page({
     balance:0,
     storedCount:"",
     userInfo: {},
-    hasUserInfo: false,
+    hasUserInfo: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onShow:function(data){
@@ -25,13 +25,14 @@ Page({
         if(!res.needUserInfo){ //已开过卡
           that.setData({
             userInfo: app.globalData.logingData,
-            hasUserInfo:true
           })
           app.getcard(function(res){
-            console.log(res);
             app.globalData.card = res;
           });
         }else{ //需要开卡
+          that.setData({
+            hasUserInfo:false
+          })
          // that.loginBackUseInfo();
         }  
         wx.hideLoading()    
@@ -44,7 +45,13 @@ Page({
           userInfo: app.globalData.logingData,
           hasUserInfo:true
         })
+        app.getcard(function(res){
+            app.globalData.card = res;
+          });
       }else{
+        that.setData({
+          hasUserInfo:false
+        })
         //that.loginBackUseInfo();
       }
       wx.hideLoading()
@@ -108,7 +115,6 @@ Page({
     }
   },
   tocard: function() {
-    console.log(app.globalData.logingData)
     if(app.globalData.logingData.needOpenCard){
       var data = {
         encrypt_card_id:decodeURIComponent(app.globalData.logingData.cardId),
@@ -123,12 +129,13 @@ Page({
         fail: function(res) {
         },
         complete: function() {
+
         }
       })    
     }else{
-      /*wx.navigateTo({
-        url: 'card'
-      })*/
+      wx.showLoading({
+        title: '加载中',
+      })
       wx.openCard({
         cardList: [
           {
@@ -137,7 +144,7 @@ Page({
           }
         ],
         success: function(res) {
-          console.log(res);
+          wx.hideLoading()
         }
       })
     }

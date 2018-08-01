@@ -1,7 +1,8 @@
 <view class="container">
 <!-- <navigator target="miniProgram" app-id="wxeb490c6f9b154ef9" extra-data="{{data}}">会员卡开卡</navigator> -->
     <view class="hds"></view>
-    <view class="header">
+    <button type="warn" class="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">领取会员卡</button>
+    <view class="header"  wx:else>
         <view class="avtar-hd" catchtap="tocard">
             <image class="avtar" src="{{userInfo.headImg  || userInfo.avatarUrl}}"></image>
         </view>
@@ -18,8 +19,8 @@
                <!--  <view class="phone">29760097740976</view> -->
             </view>    
         </view>
-        <button class="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> </button>
     </view>
+
     <view class="datas">
         <view class="datas-hd">
             <text class="num1">{{balance}}</text>
