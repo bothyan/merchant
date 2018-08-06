@@ -12,7 +12,7 @@ Page({
   },
   getStoreConfig:function(){
     var that = this;
-    if(app.shoreConfig){
+    /*if(app.shoreConfig){
 
     }else{
       app.getStoreConfig(function(res){
@@ -20,7 +20,14 @@ Page({
           payCharge:res.chargeValid
         })
       })
-    }
+    }*/
+    app.getJson(app.urlMap.chargeConfig,"get",{},function(res){
+      if(res.data.code == 0){
+        that.setData({
+          payCharge:res.data.data.chargeValid
+        })
+      }
+    });
   },
   changes:function(e){
     /*var index = e.currentTarget.dataset.index;

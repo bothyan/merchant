@@ -2,7 +2,7 @@
     <view class="header">
         <view class="search-hd" bindtap="searchfocus">
             <image src="../../images/searchicon.png" style="width: 25rpx;height: 25rpx;"></image>
-            <input placeholder="请输入会员手机号" placeholder-style="color:#999" focus="{{searchfocus}}" type="number" bindinput="changephone" confirm-type="search" bindconfirm="tosearch" value="{{phone}}"></input>
+            <input placeholder="请输入会员手机号" placeholder-style="color:#999" focus="{{searchfocus}}" type="number" bindinput="changephone" confirm-type="done" bindconfirm="tosearch" value="{{phone}}"></input>
         </view>
     </view>
     <view class="datas">

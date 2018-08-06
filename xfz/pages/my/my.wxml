@@ -22,7 +22,7 @@
     </view>
 
     <view class="datas">
-        <view class="datas-hd">
+        <view class="datas-hd" bindtap="tostored">
             <text class="num1">{{balance}}</text>
             <text class="words">余额</text>
         </view>
