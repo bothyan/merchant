@@ -14,7 +14,7 @@
     z-index: -1;
 }
 .search-hd{
-    width: 560rpx;
+    width: 500rpx;
     height: 50rpx;
     line-height: 50rpx;
     background: #ffebd2;
@@ -23,12 +23,13 @@
     align-items: center; 
     justify-content: center; 
     margin: 50rpx auto 0;
+    padding: 0 30rpx;
 }
 .search-hd input{
     color: #999999;
     font-size: 24rpx;
     margin-left: 10rpx;
-    width: 200rpx;
+    flex:1;
 }
 .code{
     width: 414rpx;

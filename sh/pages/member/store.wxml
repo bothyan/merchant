@@ -2,8 +2,8 @@
     <view class="code-hd">
         <image class="codebg" src="../../images/member/storedbg.png" />
         <view class="search-hd" bindtap="searchfocus">
-            <image src="../../images/searchicon.png" style="width: 25rpx;height: 25rpx;"></image>
-            <input placeholder="请输入手机号" type="number" focus="{{searchfocus}}" confirm-type="search" bindconfirm="tosearch"></input>
+            <input placeholder="请输入手机号" type="number" focus="{{searchfocus}}" confirm-type="search"  bindinput="changephone"></input>
+            <image src="../../images/searchicon.png" bindtap="tosearch" style="width: 25rpx;height: 25rpx;"></image>
         </view>
         <image class="code" src="{{codeImg}}" />
         <view class="tips1">请使用微信扫描二维码</view>

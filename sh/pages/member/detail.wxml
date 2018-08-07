@@ -1,9 +1,9 @@
 <view class="container">
     <view class="header">
-        <image class="avtar" src="{{useInfos.headImg}}" mode="aspectFill"></image>   
+        <image class="avtar" src="{{useInfos.headImg || '../../images/linke.png'}}" mode="aspectFill"></image>   
         <view class="msg">
             <view class="title">
-                <text>{{useInfos.name}}</text>
+                <text>{{useInfos.name || '临客'}}</text>
                 <image wx:if="{{useInfos.sex == 2}}" class="gender" src="../../images/gender2.png"></image>
                 <image wx:if="{{useInfos.sex == 1}}" class="gender" src="../../images/gender1.png"></image>
                 <view wx:if="{{useInfos.chargeCount>0}}" class="chuzhi">已储值</view>

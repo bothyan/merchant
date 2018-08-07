@@ -12,9 +12,6 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onShow:function(data){
-    
-  },
-  onLoad: function (options) {
     wx.showLoading({
       title: '加载中',
     })
@@ -59,6 +56,9 @@ Page({
       wx.hideLoading()
       that.balance();
     }
+  },
+  onLoad: function () {
+      
   },
   balance:function(){
     var that = this;

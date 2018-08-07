@@ -1,8 +1,8 @@
 <view class="container">
     <view class="header">
         <view class="search-hd" bindtap="searchfocus">
-            <image src="../../images/searchicon.png" style="width: 25rpx;height: 25rpx;"></image>
-            <input placeholder="请输入会员手机号" placeholder-style="color:#999" focus="{{searchfocus}}" type="number" bindinput="changephone" confirm-type="done" bindconfirm="tosearch" value="{{phone}}"></input>
+            <input placeholder="请输入会员手机号" placeholder-style="color:#999" focus="{{searchfocus}}" type="number" bindinput="changephone"  value="{{phone}}"></input>
+            <image src="../../images/searchicon.png" bindtap="tosearch" style="width: 25rpx;height: 25rpx;"></image>
         </view>
     </view>
     <view class="datas">
@@ -39,10 +39,10 @@
     </view>
     <view class="member-box">
         <view class="member-list" data-id="{{item.userId}}" wx:for="{{list}}" bindtap="todetail">
-            <image class="avtar" src="{{item.headImg}}" mode="aspectFill"></image>
+            <image class="avtar" src="{{item.headImg || '../../images/linke.png'}}" mode="aspectFill"></image>
             <view class="msg">
                 <view class="title">
-                    <text>{{item.name}}</text>
+                    <text>{{item.name || '临客'}}</text>
                     <image wx:if="{{item.sex == 2}}" class="gender" src="../../images/gender2.png"></image>
                     <image wx:if="{{item.sex == 1}}" class="gender" src="../../images/gender1.png"></image>
                     <view wx:if="{{item.chargeCount>0}}" class="chuzhi">已储值</view>

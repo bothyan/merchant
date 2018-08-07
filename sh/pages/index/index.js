@@ -7,14 +7,13 @@ Page({
 
   },
   onShow:function(e){
-    console.log("Show");
-  },
-  onLoad: function () {
-    console.log("Load");
     wx.showLoading({
       title: '加载中',
     })
     this.getData();
+  },
+  onLoad: function () {
+   
   },
   getData:function(){
     wx.hideLoading()

@@ -28,8 +28,8 @@ Page({
     });
   },
   toconfirm: function() {
-    wx.navigateTo({
-      url: 'list'
+    wx.switchTab({
+      url: '../index/index'
     })
   },
 })

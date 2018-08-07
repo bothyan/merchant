@@ -21,7 +21,8 @@ Page({
     total:0
   },
   onShow:function(e){
-    
+    /*this.getList();
+    this.getSummary();*/
   },
   onLoad: function (options) {
     var params = options || {};
@@ -62,6 +63,7 @@ Page({
     app.getJson(app.urlMap.queryUserList,"get",param,function(res){
       if(res.data.code == 0){
         var list = that.data.list.concat(res.data.data.list);
+        console.log(list)
         that.setData({
           list:list,
           total:res.data.data.total
@@ -81,26 +83,26 @@ Page({
     });
   },
   searchfocus: function(){
-    this.setData({
+   /* this.setData({
         searchfocus:true
-    })
-  },
-  changephone:function(e){
-    /*this.setData({
-      phone:e.detail.value
     })*/
   },
-  tosearch:function(e){
+  changephone:function(e){
+    this.setData({
+      phone:e.detail.value
+    })
+  },
+  tosearch:function(){
     var that = this;
     var param = that.data.param;
     param.pageNo = 1;
     that.setData({
-      phone:e.detail.value,
+      phone:that.data.phone,
       param:param
     })
     var param = JSON.parse(JSON.stringify(that.data.param));
     if(that.data.phone !== ""){
-      param.phone = e.detail.value;
+      param.phone = that.data.phone;
     }
     wx.showLoading({
       title: '加载中',

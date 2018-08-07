@@ -34,7 +34,19 @@ Page({
             that.setData({
               mlist: data
             })  
-            console.log(data);
+            if(data.length == 0){
+              wx.navigateToMiniProgram({
+                appId: 'wx1d0a87b1729eff40', 
+                extraData: data,
+                success: function() {
+                },
+                fail: function(res) {
+                },
+                complete: function() {
+
+                }
+              })     
+            }
             if(data.length == 1){
               wx.setStorageSync('xfzshopname', data[0].name);
               var code = data[0].merchantCode;

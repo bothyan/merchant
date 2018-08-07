@@ -146,6 +146,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         var data = {};
         data.code = res.code;
+        data.appId = "wx3e96083ff8d73c66";
         if(that.globalData.scene !==""){
           data.scene = that.globalData.scene
         }

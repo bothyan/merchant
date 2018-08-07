@@ -7,7 +7,8 @@ Page({
     searchfocus:false,
     scene:"",
     codeImg:"",
-    pageHided:false
+    pageHided:false,
+    phone:""
   },
   onLoad: function () {
     this.getQrCode();
@@ -76,7 +77,12 @@ Page({
         searchfocus:true
     })
   },
-  tosearch:function(e){
+  changephone:function(e){
+    this.setData({
+      phone:e.detail.value
+    })
+  },
+  tosearch:function(){
     var that = this;
     var param = {
       pageSize:10,
@@ -87,10 +93,9 @@ Page({
       payTimeOrder:"DESC"
     };
 
-    if(e.detail.value !== ""){
-      param.phone = e.detail.value;
+    if(that.data.phone !== ""){
+      param.phone = that.data.phone;
       app.getJson(app.urlMap.queryUserList,"get",param,function(res){
-        console.log(res);
         if(res.data.code == 0){
           var list = res.data.data.list;
           if(list.length == 0){
