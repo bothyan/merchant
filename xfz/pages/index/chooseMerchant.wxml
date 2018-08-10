@@ -1,5 +1,6 @@
 <view class="container">
     <view bindtap="enter" class="list" wx:for="{{mlist}}" data-code="{{item.merchantCode}}" data-name="{{item.name}}">
+        <image class="logo" src="{{item.logo}}" style="width:80rpx; height: 80rpx;" mode="aspectFill"></image>   
         <view class="mname">{{item.name}}</view>
         <view class="enter">进入></view>
     </view>

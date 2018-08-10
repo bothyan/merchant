@@ -147,6 +147,14 @@ Page({
         ],
         success: function(res) {
           wx.hideLoading()
+        },
+        fail: function(res){
+          wx.hideLoading()
+          wx.showToast({
+            title: res.errMsg,
+            icon: 'none',
+            duration: 1500
+          })
         }
       })
     }

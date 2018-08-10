@@ -20,3 +20,6 @@
     color: #fd9b27;
     font-size: 24rpx;
 }
+.logo{
+    margin-right: 20rpx;
+}
