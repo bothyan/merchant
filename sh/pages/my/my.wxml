@@ -1,7 +1,7 @@
 <view class="container">
     <view class="header">
         <image class="bg" src="../../images/my/bg.png"></image>
-        <image class="avtar" src="../../images/temp/avtar.png" mode="aspectFill"></image>
+        <image class="avtar" src="{{shopInfo.logo}}" mode="aspectFill"></image>
         <image class="setings" src="../../images/my/seting.png" bindtap="tagsetting"></image>
         <view class="name">{{shopInfo.storeName}}</view>
         <view class="title">

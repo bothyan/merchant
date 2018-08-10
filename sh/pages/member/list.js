@@ -5,20 +5,21 @@ const app = getApp()
 Page({
   data: {
     searchfocus:false,
-    orderArr:["","","",""],
+    orderArr:["desc","","",""],
     param:{
-      pageSize:5,
+      pageSize:10,
       pageNo:1,
       createTimeOrder:"DESC",
-      payAmountOrder:"DESC",
-      payCountOrder:"DESC",
-      payTimeOrder:"DESC"
+      payAmountOrder:"",
+      payCountOrder:"",
+      payTimeOrder:""
     },
     list:[],
     summaryData:null,
     avtar:"../../images/temp/member.png",
     phone:"",
-    total:0
+    total:0,
+    tag:1
   },
   onShow:function(e){
     /*this.getList();
@@ -66,7 +67,8 @@ Page({
         console.log(list)
         that.setData({
           list:list,
-          total:res.data.data.total
+          total:res.data.data.total,
+          tag:0
         })
       }
       wx.hideLoading()
@@ -118,22 +120,39 @@ Page({
     });
   },
   orders:function(e){
+    var tag = this.data.tag;
+    if(tag == 1){
+      return
+    }
     var index = e.currentTarget.dataset.index;
     var order = this.data.orderArr;
-    var param = this.data.param;
+    var orderreset = ["","","",""];
+    var param = {
+      pageSize:10,
+      pageNo:1,
+      createTimeOrder:"",
+      payAmountOrder:"",
+      payCountOrder:"",
+      payTimeOrder:""
+    };
     var arr = ["createTimeOrder","payAmountOrder","payCountOrder","payTimeOrder"];
     if(order[index] == ""){
-        order[index] = "hover"
-        param[arr[index]] = "ASC"
-    }else{
-        order[index] = ""
+        orderreset[index] = "desc"
         param[arr[index]] = "DESC"
     }
-    param.pageNo = 1;
+    if(order[index] == "desc"){
+        orderreset[index] = "asc"
+        param[arr[index]] = "ASC"
+    }
+    if(order[index] == "asc"){
+        orderreset[index] = "desc"
+        param[arr[index]] = "DESC"
+    }
     this.setData({
-        orderArr:order,
+        orderArr:orderreset,
         param:param,
-        list:[]
+        list:[],
+        tag:1
     });   
     this.getList();
   },

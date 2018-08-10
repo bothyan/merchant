@@ -1,5 +1,5 @@
 <view class="container">
-    <image class="banner" src="../../images/temp/shop.png" style="width: 750rpx;height: 257rpx;"></image>
+    <image class="banner" mode="aspectFill" src="{{shopInfo.logo}}" style="width: 750rpx;height: 257rpx;"></image>
     <view class="myhd">
         <text>门店名称</text>
         <text class="words">{{shopInfo.storeName}}</text>

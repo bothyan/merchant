@@ -45,7 +45,7 @@
     justify-content: center;
     height: 100%;
 }
-.list .right{
+.list .right,.list .right1{
     float: right;
     display: flex;
     justify-content: center;
@@ -60,6 +60,11 @@
     font-size: 36rpx;
     color: #fc8e8e;
     font-weight: bold;
+}
+.right1{
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #5dbf82;
 }
 .time{
     font-size: 24rpx;

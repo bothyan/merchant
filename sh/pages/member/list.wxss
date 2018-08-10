@@ -67,7 +67,7 @@
 .triangle .triangle1{
     border-left: 10rpx dashed transparent;
     border-right: 10rpx dashed transparent;
-    border-top: 10rpx solid #ff9b1f;
+    border-top: 10rpx solid #999999;
     border-bottom: 10rpx dashed transparent;
     height: 0;
     width: 0;
@@ -90,11 +90,11 @@
     right: 0;
     top: 0rpx;
 }
-.trianglehover .triangle1{
+.triangledesc .triangle1{
     border-left: 10rpx dashed transparent;
     border-right: 10rpx dashed transparent;
-    border-top: 10rpx solid #999999;
-    border-bottom: 10rpx dashed transparent;
+    border-top: 10rpx dashed #ff9b1f;
+    border-bottom: 10rpx solid transparent;
     height: 0;
     width: 0;
     font-size: 0;
@@ -103,7 +103,33 @@
     right: 0;
     bottom: -6rpx;
 }
-.trianglehover .triangle2{
+.triangledesc .triangle2{
+    border-left: 10rpx dashed transparent;
+    border-right: 10rpx dashed transparent;
+    border-top: 10rpx dashed transparent;
+    border-bottom: 10rpx solid #999999;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 3rpx;
+}
+.triangleasc .triangle1{
+    border-left: 10rpx dashed transparent;
+    border-right: 10rpx dashed transparent;
+    border-top: 10rpx dashed #999999;
+    border-bottom: 10rpx solid transparent;
+    height: 0;
+    width: 0;
+    font-size: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: -6rpx;
+}
+.triangleasc .triangle2{
     border-left: 10rpx dashed transparent;
     border-right: 10rpx dashed transparent;
     border-top: 10rpx dashed transparent;

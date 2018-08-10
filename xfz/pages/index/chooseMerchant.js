@@ -34,31 +34,32 @@ Page({
             that.setData({
               mlist: data
             })  
-            if(data.length == 0){
-              wx.navigateToMiniProgram({
-                appId: 'wx1d0a87b1729eff40', 
-                extraData: data,
-                success: function() {
-                },
-                fail: function(res) {
-                },
-                complete: function() {
-
-                }
-              })     
-            }
             if(data.length == 1){
-              wx.setStorageSync('xfzshopname', data[0].name);
-              var code = data[0].merchantCode;
-              app.getJson(app.urlMap.chooseMerchant,"post",{
-                  merchantCode:code
-              },function(res){
-                  if(res.data.code == 0){
-                     wx.navigateTo({
-                        url: '../my/my'
-                      })
-                  } 
-              });
+              if(data[0].merchantCode == "wx1d0a87b1729eff40"){
+                wx.navigateToMiniProgram({
+                  appId: 'wx1d0a87b1729eff40', 
+                  extraData: {},
+                  success: function() {
+                  },
+                  fail: function(res) {
+                  },
+                  complete: function() {
+
+                  }
+                })
+              }else{
+                wx.setStorageSync('xfzshopname', data[0].name);
+                  var code = data[0].merchantCode;
+                  app.getJson(app.urlMap.chooseMerchant,"post",{
+                      merchantCode:code
+                  },function(res){
+                      if(res.data.code == 0){
+                         wx.navigateTo({
+                            url: '../my/my'
+                          })
+                      } 
+                  });  
+                }     
             }
         } 
     });

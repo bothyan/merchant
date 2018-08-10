@@ -60,6 +60,7 @@ Page({
     },function(res){
         if(res.data.code == 0){
             var data = res.data.data;
+            console.log(data);
             data.list.map(function(item,key){
                 item.ctime = util.formatTime(item.ctime)
                 return item;

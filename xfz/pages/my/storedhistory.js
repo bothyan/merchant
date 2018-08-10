@@ -40,7 +40,7 @@ Page({
             var data = res.data.data;
             that.setData({
               balanceChargeAmount: data.balanceChargeAmount,
-              balancePayAmount:data.balanceChargeAmount
+              balancePayAmount:data.balancePayAmount
             })
         }     
     });

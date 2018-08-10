@@ -16,7 +16,8 @@
                 <text class="place">{{item.storeName}}</text>   
                 <text class="time">{{item.ctime}}</text>
             </view>
-            <view class="right">-{{item.actualChargeAmount}}</view>
+            <view wx:if="{{item.orderType == 2}}" class="right1">+{{item.actualChargeAmount}}</view>
+            <view wx:else class="right">-{{item.actualChargeAmount}}</view>
         </view>
         
     </view>
