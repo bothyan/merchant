@@ -6,7 +6,8 @@ var util = require('../../utils/util.js');
 Page({
   data: {
     userId:"",
-    useInfos:null
+    useInfos:null,
+    realMember:false
   },
   onShow:function(options){
     
@@ -23,9 +24,13 @@ Page({
   getDetails:function(){
     var that = this;
     app.getJson(app.urlMap.getUserInfo,"get",{userId:that.data.userId},function(res){
-      console.log(res);
       if(res.data.code == 0){
         var data = res.data.data;
+        if(data.name){
+          that.setData({
+            realMember:true
+          })  
+        }
         data.birthday = util.formatDate(data.birthday)
         data.lastPayTime = util.formatTime(data.lastPayTime)
         if(data.payCount>0){
@@ -53,9 +58,19 @@ Page({
   },
   tochuzhi:function(e){
     var that = this;
-    wx.navigateTo({
-      url: 'recharge?id='+that.data.userId
-    })
+    var realMember = that.data.realMember;
+    if(realMember){
+      wx.navigateTo({
+        url: 'recharge?id='+that.data.userId
+      }) 
+    }else{
+      wx.showToast({
+        title: '用户会员卡未创建！',
+        icon: 'none',
+        duration: 1500
+      })  
+    }
+    
   },
   toconsumption:function(e){
     var that = this;

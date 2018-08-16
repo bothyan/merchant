@@ -163,8 +163,18 @@ Page({
     })
   },
   tochuzhi:function(e){
-    wx.navigateTo({
-      url: 'store'
-    })
+    var type = wx.getStorageSync('sh_accountType');
+    if(type !== 2){
+      wx.showToast({
+        title: '没有权限储值',
+        icon: 'none',
+        duration: 1500
+      })
+    }else{
+      wx.navigateTo({
+        url: 'store'
+      })  
+    }
+    
   }
 })

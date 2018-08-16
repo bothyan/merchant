@@ -60,9 +60,9 @@ Page({
               mlist: data
             })  
             if(data.length == 1 && !formCard){
-              if(data[0].merchantCode == "wx1d0a87b1729eff40"){
+              if(data[0].merchantCode == "wx290d56197432d5fe"){
                 wx.navigateToMiniProgram({
-                  appId: 'wx1d0a87b1729eff40', 
+                  appId: 'wx290d56197432d5fe', 
                   extraData: {},
                   success: function() {
                   },
