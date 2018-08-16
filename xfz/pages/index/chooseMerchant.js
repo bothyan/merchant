@@ -93,14 +93,29 @@ Page({
     var code = e.currentTarget.dataset.code;
     var name = e.currentTarget.dataset.name;
     wx.setStorageSync('xfzshopname', name);
-    app.getJson(app.urlMap.chooseMerchant,"post",{
-        merchantCode:code
-    },function(res){
-        if(res.data.code == 0){
-           wx.navigateTo({
-              url: '../my/my'
-            })
-        } 
-    });
+
+    if(code == "wx290d56197432d5fe"){
+      wx.navigateToMiniProgram({
+        appId: 'wx290d56197432d5fe', 
+        extraData: {},
+        success: function() {
+        },
+        fail: function(res) {
+        },
+        complete: function() {
+
+        }
+      })
+    }else{
+      app.getJson(app.urlMap.chooseMerchant,"post",{
+          merchantCode:code
+      },function(res){
+          if(res.data.code == 0){
+             wx.navigateTo({
+                url: '../my/my'
+              })
+          } 
+      });  
+    }
   }
 })

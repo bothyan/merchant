@@ -59,18 +59,26 @@ Page({
   tochuzhi:function(e){
     var that = this;
     var realMember = that.data.realMember;
-    if(realMember){
-      wx.navigateTo({
-        url: 'recharge?id='+that.data.userId
-      }) 
-    }else{
+    var type = wx.getStorageSync('sh_accountType');
+    if(type !== 2){
       wx.showToast({
-        title: '用户会员卡未创建！',
+        title: '没有权限储值',
         icon: 'none',
         duration: 1500
-      })  
+      })
+    }else{
+      if(realMember){
+        wx.navigateTo({
+          url: 'recharge?id='+that.data.userId
+        }) 
+      }else{
+        wx.showToast({
+          title: '用户会员卡未创建！',
+          icon: 'none',
+          duration: 1500
+        })  
+      }  
     }
-    
   },
   toconsumption:function(e){
     var that = this;
