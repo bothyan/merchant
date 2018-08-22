@@ -37,7 +37,9 @@ App({
   onShow :function(data){
     //console.log(data);
     var that = this;
-    if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
+    //if(data.referrerInfo && data.referrerInfo.appId == "wxeb490c6f9b154ef9"){
+    if(data.referrerInfo && data.referrerInfo.extraData){
+    if(data.referrerInfo.extraData.code && data.referrerInfo.extraData.card_id && data.referrerInfo.extraData.wx_activate_after_submit_url){
       wx.showLoading({
         title: '加载中',
       })
@@ -46,8 +48,14 @@ App({
       card.code = callbackdata.code;
       card.card_id = callbackdata.card_id;
       that.globalData.card = card;
-      console.log(that.globalData.card);
+      //console.log(that.globalData.card);
       var params = that.params(callbackdata.wx_activate_after_submit_url.split("?")[1]);
+      /*console.log({
+          encryptCode:params.encrypt_code,
+          acitvateTicket:callbackdata.activate_ticket,
+          cardId:callbackdata.card_id,
+          openId: params.openid
+        })*/
       wx.request({
         url: "https://ssl.zhihuishangjie.cn/app/user/submitOpenCardInfo",
         header: {
@@ -62,6 +70,7 @@ App({
           openId: params.openid
         },
         success: function(res) {   
+          //console.log(res);
           if(res.data.code == 0){
             wx.hideLoading()
             wx.showToast({
@@ -80,6 +89,7 @@ App({
           
         }
       })
+    }
     }
   },
 /* ajaxss:function(){

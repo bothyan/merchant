@@ -26,7 +26,7 @@ Page({
     app.getJson(app.urlMap.getUserInfo,"get",{userId:that.data.userId},function(res){
       if(res.data.code == 0){
         var data = res.data.data;
-        if(data.name){
+        if(data.realName){
           that.setData({
             realMember:true
           })  
