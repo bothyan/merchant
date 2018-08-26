@@ -8,11 +8,13 @@ Page({
     formCard:false
   },
   onLoad: function (options) {
+    //options.scene = "429e06c4f6d12a9078c6437b84ef0e2f"
     var scene = decodeURIComponent(options.scene) 
     var that = this;
     //options.merchant = "1510673537";
     //options.page = "balance"
     if(options.scene){
+       wx.setStorageSync('xfzshopname', "");
         app.globalData.scene = scene;
         wx.navigateTo({
           url: '../my/my'
@@ -110,10 +112,14 @@ Page({
       app.getJson(app.urlMap.chooseMerchant,"post",{
           merchantCode:code
       },function(res){
-          if(res.data.code == 0){
-             wx.navigateTo({
+          if(res.data.code == 0){          
+            var data = res.data.data;
+            if(data.needOpenCard){
+              app.globalData.logingData = Object.assign(app.globalData.logingData , data)
+            }
+            wx.navigateTo({
                 url: '../my/my'
-              })
+            })
           } 
       });  
     }

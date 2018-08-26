@@ -16,12 +16,16 @@ Page({
       title: '加载中',
     })
     this.setData({
-      shopname:wx.getStorageSync('xfzshopname') || "智慧商街"
+      shopname:wx.getStorageSync('xfzshopname') //|| "智慧商街"
     })
     var that = this;
     if(app.globalData.scene){
       app.login(function(res){
         app.globalData.logingData = res
+        that.setData({
+          shopname:res.merchantName
+        })
+        wx.setStorageSync('xfzshopname', res.merchantName);
         if(!res.needUserInfo){ //已开过卡
           that.setData({
             userInfo: app.globalData.logingData,
