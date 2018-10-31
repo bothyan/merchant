@@ -1,3 +1,51 @@
 <view class="container">
-    
+  <swiper indicator-color="#fff" indicator-active-color="#f38200" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="banner">
+    <block wx:for="{{message.carrousel}}">  
+      <swiper-item>  
+        <image src="{{item}}" model="aspectFill" />  
+      </swiper-item>  
+    </block> 
+  </swiper>   
+  <view class="shopdes">
+    <view class="msg1">
+      <view class="ssavtar">
+        <image model="aspectFill" src="{{message.logo}}"/>
+      </view>
+      <view class="name">{{message.name}}</view>
+      <view class="mores" bindtap="toshops">更多></view> 
+    </view>  
+    <view class="msg2">
+      <view class="location"><image src="../../images/locationicon.png"/>{{message.address || "暂无地址"}}</view>
+      <image wx:if="{{message.phone}}" data-num="{{message.phone}}" class="phoneicon" bindtap="calling" src="../../images/phoneicon.png"/>
+      <image wx:else  class="phoneicon grays"  src="../../images/phoneicon.png"/>
+    </view>  
+  </view> 
+  <view class="model">
+    <view class="titlebox">
+        <image src="../../images/titleb.png" style="width:11rpx;height:29rpx;"></image>  
+        <text>更多信息</text>
+    </view>
+    <view class="shebei">
+      <view class="sb-item">
+        <image style="width: 20rpx;height: 21rpx;" src="../../images/wifi.png"/>WIFI:{{message.storeInfoVO.wifi}}
+      </view>
+      <view class="sb-item">
+        <image style="width: 25rpx;height: 19rpx;" src="../../images/car.png"/>停车位:{{message.storeInfoVO.parking}}
+      </view>
+      <view class="sb-item">
+        <image style="width: 24rpx;height: 25rpx;" src="../../images/smoke.png"/>吸烟区:{{message.storeInfoVO.smoking}}
+      </view>
+      <view class="sb-item">
+        <image style="width: 22rpx;height: 23rpx;" src="../../images/box.png"/>包厢:{{message.storeInfoVO.room}}
+      </view>
+      <view class="sb-item">
+        <image style="width: 17rpx;height: 22rpx;" src="../../images/drinks.png"/>免费饮品:{{message.storeInfoVO.freeDrinking}}
+      </view>
+    </view>
+    <view class="wifis" wx:if="{{message.storeInfoVO.wifi == '有'}}">
+      <view class="wcode">WIFI账号：<text>{{message.storeInfoVO.wifiObj.wifi}}</text></view>
+      <view class="wpassword">WIFI密码：<text>{{message.storeInfoVO.wifiObj.password}}</text></view>
+      <view data-num="{{message.storeInfoVO.wifiObj.password}}" class="copy" bindtap="copypassword">复制密码</view>
+    </view>
+  </view>
 </view>

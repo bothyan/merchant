@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="list" wx:for="{{list}}" data-code="{{item.storeCode}}" bindtap="enterIndex">
+    <text class="title">{{item.name}}</text>
+    <view class="location"><image src="../../images/locationicon.png"/>{{item.address || "暂无地址"}}</view>
+  </view>  
+</view>

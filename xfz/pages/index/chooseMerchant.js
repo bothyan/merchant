@@ -16,7 +16,7 @@ Page({
     if(options.scene){
        wx.setStorageSync('xfzshopname', "");
         app.globalData.scene = scene;
-        wx.navigateTo({
+        wx.switchTab({
           url: '../my/my'
         })
     }else{
@@ -38,7 +38,7 @@ Page({
                       url: '../my/storedhistory'
                     })  
                   }else{
-                    wx.navigateTo({
+                    wx.switchTab({
                       url: '../my/my'
                     })  
                   }
@@ -80,8 +80,9 @@ Page({
                   app.getJson(app.urlMap.chooseMerchant,"post",{
                       merchantCode:code
                   },function(res){
+
                       if(res.data.code == 0){
-                         wx.navigateTo({
+                         wx.switchTab({
                             url: '../my/my'
                           })
                       } 
@@ -117,7 +118,7 @@ Page({
             if(data.needOpenCard){
               app.globalData.logingData = Object.assign(app.globalData.logingData , data)
             }
-            wx.navigateTo({
+            wx.switchTab({
                 url: '../my/my'
             })
           } 

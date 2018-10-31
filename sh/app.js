@@ -3,6 +3,7 @@ App({
   globalData:{
     sh_token:wx.getStorageSync('sh_token') || "",
     host:"https://ssl.zhihuishangjie.cn"
+    //host:"https://promotion-test.zhihuishangjie.cn"
   }, 
   shoreConfig:null,
   urlMap:{},

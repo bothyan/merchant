@@ -1,0 +1,130 @@
+/*滚动图*/
+
+.banner{
+  width: 750rpx;
+  height: 498rpx;
+  background-color: #fff;
+}
+
+.banner image {
+  width: 750rpx;
+  height: 498rpx;
+}
+.shopdes{
+  height: 175rpx;
+  padding: 0 24rpx;
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.msg1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.ssavtar{
+  padding: 10rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  background: #fff;
+  margin-top: -50rpx;
+}
+.ssavtar image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+}
+.shopdes .name{
+  color: #333333;
+  flex: 1;
+  font-size: 36rpx;
+}
+.shopdes .mores{
+  color: #ff9b1f;
+  font-size: 20rpx;
+}
+.msg2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 83rpx;
+}
+.msg2 .location{
+  flex: 1;
+  color: #999999;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+}
+.msg2 .location image{
+  width: 26rpx;
+  height: 28rpx;
+}
+.msg2 .phoneicon{
+  width: 30rpx;
+  height: 31rpx;
+}
+.model{
+  background: #fff;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.titlebox{
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.titlebox text{
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 14rpx;
+}
+.shebei{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 24rpx 20rpx;
+  flex-wrap: wrap;
+}
+.shebei .sb-item{
+  color: #333333;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.shebei .sb-item image{
+  margin-right: 5rpx;
+}
+.wifis{
+  padding: 20rpx 24rpx;
+  border-top: 2rpx solid #f2f2f2;
+  position: relative;
+}
+.wcode,.wpassword{
+  color: #333333;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+.wcode text,.wpassword text{
+  color: #999999;
+}
+.copy{
+  position: absolute;
+  width: 120rpx;
+  height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+  color: #333333;
+  font-size: 24rpx;
+  right: 0;
+  bottom: 30rpx;
+  border: 2rpx solid #f2f2f2;
+}
+
+
+

@@ -7,7 +7,8 @@ App({
     xfz_token:"",
     userInfo: null,
     logingData:null,
-    host:"https://ssl.zhihuishangjie.cn",
+    host:"https://ssl.zhihuishangjie.cn"
+    //host:"https://promotion-test.zhihuishangjie.cn",
     card:{}
   },  
   urlMap:{},
@@ -198,7 +199,9 @@ App({
       chargeList: host+"/app/user/balance/chargeList",
       balancesummary: host+"/app/user/balance/summary",
       orderList: host+"/app/user/pay/orderList",
-      paySummary: host+"/app/user/pay/summary"
+      paySummary: host+"/app/user/pay/summary",
+      shoreHome: host+"/app/user/store/home",
+      shoreList: host+"/app/user/store/list"
     };
     this.urlMap = urlMap;
   },
